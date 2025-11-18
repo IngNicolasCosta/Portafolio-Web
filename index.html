@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Nicolás Costa</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Nicolás Costa</h1>
+        <p>Estudiante de Ingeniería en Informática y Desarrollo Full Stack</p>
+        <div class="contact-info">
+            <a href="https://wa.me/5491127770315" target="_blank" class="contact-button">
+                <img src="/assets/imagenes/whatsapp-icon.png" alt="">
+                <span>+54 9 11 2777-0315</span>
+            </a>
+            <a href="mailto:nicolascosta15112004@gmail.com" class="contact-button" id="btn-email">
+                <img src="/assets/imagenes/gmail-icon.png" alt="">
+                <span>nicolascosta15112004@gmail.com</span>
+            </a>
+            <a href="https://github.com/IngNicolasCosta" class="contact-button" target="_blank">
+                <img src="/assets/imagenes/github-icon.png" alt="">
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/nicolas-costa-554612308/" class="contact-button" target="_blank">
+                <img src="/assets/imagenes/linkedin-icon.png" alt="">
+                <span>LinkedIn</span>
+            </a>
+            <a href="assets/docs/CV_NICOLAS_COSTA.pdf" download="CV_Nicolas_Costa_FullStack.pdf" class="contact-button">
+                <img src="/assets/imagenes/cv-icon.png" alt="">
+                <span>Descargar CV</span>
+            </a>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <span>
+            <select id="language-switcher" class="language-selector">
+                <option value="es" selected>Español</option>
+                <option value="en">English</option>
+            </select>
+            <a href="#about_section">Acerca de Mí</a>
+            <a href="#experience_section">Experiencia Laboral</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#education_section">Formación</a>
+        </span>
+    </nav>
+
+    <main class="container">
+
+        <section id="about_section" class="about section transformar-section" data-modal="modal-about">
+            <h2>Acerca de Mí</h2>
+            <p>Estudiante de Ingeniería en Informática (3er año finalizado) con formación en ciberseguridad (Certificado
+                Google) y
+                habilidades sólidas en Python, SQL, HTML5 y Java.</p>
+            <p>Apasionado por la resolución de problemas complejos y la arquitectura de software. Busco mi primera experiencia profesional como Desarrollador o Analista de Seguridad, donde pueda aplicar mi base de ingeniería y mi capacidad de aprendizaje continuo para aportar valor real al equipo.</p>
+            <p id="click-about" class="click-mas">Click para ver más.</p>
+        </section>
+
+
+        <div class="skills-projects-group">
+            <section class="skills section transformar-section" id="habilidades">
+                <h2>Habilidades Técnicas</h2>
+
+                <div class="carousel-container" id="skillsCarousel">
+                    <div class="carousel-track">
+
+                        <div class="carousel-slide skill-group active-slide" data-modal="modal-skills-prog">
+                            <h3>Programación</h3>
+                            <ul>
+                                <li><strong>Python🐍</strong> Conocimiento básico en sintaxis y estructuras
+                                    fundamentales.</li>
+                                <li><strong>Java☕</strong> Nivel intermedio en desarrollo . . .</li>
+                            </ul>
+                            <p id="click-prog" class="click-mas">Click para ver más.</p>
+                        </div>
+
+                        <div class="carousel-slide skill-group" data-modal="modal-skills-bd">
+                            <h3>Bases de Datos y Estructura de la Información</h3>
+                            <ul>
+                                <li><strong>SQL💾</strong> Conocimiento básico a intermedio en consultas, manipulación y
+                                    gestión de
+                                    bases de datos relacionales.</li>
+                                <li><strong>EXCEL📊</strong> Nivel intermedio a avan . . .</li>
+                            </ul>
+                            <p id="click-bd" class="click-mas">Click para ver más.</p>
+                        </div>
+
+                        <div class="carousel-slide skill-group" data-modal="modal-skills-so">
+                            <h3>Sistemas Operativos</h3>
+                            <ul>
+                                <li><strong>Windows🖥️</strong> Nivel avanzado por uso diario y dominio de sus
+                                    funcionalidades.</li>
+                                <li><strong>Linux🐧</strong>Nivel . . .</li>
+                            </ul>
+                            <p id="click-so" class="click-mas">Click para ver más.</p>
+                        </div>
+
+                        <div class="carousel-slide skill-group" data-modal="modal-skills-hw">
+                            <h3>Hardware y Ensamblado</h3>
+                            <ul>
+                                <li><strong>Montaje y Mantenimiento de PC🛠️</strong> Nivel avanzado en ensamblaje de PC desde cero,
+                    reemplazo de compon. . .</li>
+                            </ul>
+                            <p id="click-hw" class="click-mas">Click para ver más.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav-buttons">
+                    <button class="nav-btn prev-btn" data-carousel="skillsCarousel">←</button>
+                    <button class="nav-btn next-btn" data-carousel="skillsCarousel">→</button>
+                </div>
+
+            </section>
+
+            <section class="projects section transformar-section" id="proyectos">
+                <h2>Proyectos Como Desarrollador</h2>
+
+                <div class="carousel-container" id="projectsCarousel">
+                    <div class="carousel-track">
+                        <div class="project-card carousel-slide active-slide project-group" data-modal="modal-AppPsico">
+                            <h3>App para Psicólogos (En desarrollo)</h3>
+                            <p>Estoy desarrollando una plataforma web para la gestión eficiente de pacientes, turnos,
+                                historiales
+                                . . . </p>
+                            <p id="click-psico" class="click-mas">Click para ver más.</p>
+                        </div>
+
+                        <div class="project-card carousel-slide project-group" data-modal="modal-portafolio">
+                            <h3>Portafolio Personal (Este sitio)</h3>
+                            <p>Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías
+                                frontend
+                                fundamentales . . .</p>
+                            <p id="click-port" class="click-mas">Click para ver más.</p>
+                        </div>
+
+                        <div class="project-card carousel-slide project-group" data-modal="modal-commerce">
+                            <h3>Web E-commerce (En Desarrollo)</h3>
+                            <p>Desarrollo de un sitio web multipágina para una empresa (ficticia), simulando un entorno profesional.
+                                Demostrando . . .</p>
+                            <p id="click-commerce" class="click-mas">Click para ver más.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav-buttons">
+                    <button class="nav-btn prev-btn" data-carousel="projectsCarousel">←</button>
+                    <button class="nav-btn next-btn" data-carousel="projectsCarousel">→</button>
+                </div>
+            </section>
+        </div>
+        <div class="two-columns">
+            <section class="experience section" id="experience_section">
+                <h2>Experiencia Laboral</h2>
+
+                <article class="job-card">
+                    <h3>Técnico en Hardware Privado</h3>
+                    <p class="period">12/2021 - Actual</p>
+                    <ul>
+                        <li>Instalación de software y hardware.</li>
+                        <li>Resolución de problemas y toma de decisiones.</li>
+                        <li>Comunicación efectiva y trabajo bajo presión.</li>
+                    </ul>
+                </article>
+
+                <article class="job-card">
+                    <h3>Soporte Técnico Privado</h3>
+                    <p class="period">01/2022 - Actual</p>
+                    <ul>
+                        <li>Restauracion de sistemas comprometidos.</li>
+                        <li>Educación a usuarios en seguridad (phishing, backups).</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="education section" id="education_section">
+                <h2>Formación</h2>
+
+                <article class="job-card">
+                    <h3>Ingeniería en Informática</h3>
+                    <p class="period">Universidad del Salvador, 2023 - En Curso</p>
+                </article>
+
+                <article class="job-card">
+                    <h3>Ciberseguridad de Google</h3>
+                    <p class="period">Coursera, Agosto 2024 - Marzo 2025 <a
+                            href="https://www.coursera.org/account/accomplishments/professional-cert/H0Z1G3L4NRIW">Certificado</a>
+                    </p>
+                </article>
+
+                <article class="job-card">
+                    <h3>Desarrollo Full Stack</h3>
+                    <p class="period">Coderhouse, Octubre 2025 - En Curso</p>
+                </article>
+
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Nicolás Costa. Portafolio creado con HTML, CSS y JS.</p>
+    </footer>
+    <!-- MODAL SECTIONS -->
+    <div id="modal-about" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Detalles Adicionales - Acerca de Mí</h3>
+            <p>Soy un estudiante que está por empezar el 4to año de Ingeniería en Informática, lo que me proporciona una base
+                teórica sólida. </p>
+            <p>Mi *Certificado de Ciberseguridad de Google* me ha equipado con conocimientos de seguridad en redes,
+                sistemas operativos y gestión de riesgos.</p>
+            <p>Actualmente estoy mas interesado por el desarrollo de páginas web o aplicaciones, es por eso que estoy
+                realizando un curso de desarrollo web full stack. Estoy listo para
+                aplicar mis conocimientos en un entorno profesional, aportando entusiasmo y una fuerte ética de trabajo.
+            </p>
+
+            <p><strong>Objetivo:</strong> Seguir aprendiendo a la hora de hacer proyectos o trabajar para empresas.</p>
+        </div>
+    </div>
+
+
+    <div id="modal-skills-prog" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Programación</h3>
+            <ul>
+                <li><strong>Python🐍</strong> Conocimiento básico en sintaxis y estructuras fundamentales.</li>
+                <li><strong>Java☕</strong> Nivel intermedio en desarrollo de aplicaciones.</li>
+                <li><strong>C/C#</strong> Conocimiento básico en sintaxis y fundamentos de programación.</li>
+                <li><strong>HTML🌐</strong> Dominio avanzado en la estructuración de contenido web (Estudiando
+                    Desarrollo Full Stack).
+                </li>
+                <li><strong>CSS✨</strong> Dominio avanzado en el diseño y presentación visual (Estudiando Desarrollo
+                    Full Stack).</li>
+                <li><strong>JavaScript🚀</strong> Dominio avanzado y en expansión (Estudiando Desarrollo Full Stack).
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-skills-bd" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Bases de Datos y Estructura de la Información</h3>
+            <ul>
+                <li><strong>SQL💾</strong> Conocimiento básico a intermedio en consultas, manipulación y gestión de
+                    bases de datos relacionales.</li>
+                <li><strong>EXCEL📊</strong> Nivel intermedio a avanzado en análisis de datos, tablas dinámicas y
+                    reportería.</li>
+                <li><strong>XML🏷️</strong> Conocimiento básico a intermedio en la estructuración e intercambio de
+                    datos.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-skills-so" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Sistemas Operativos</h3>
+            <ul>
+                <li><strong>Windows🖥️</strong> Nivel avanzado por uso diario y dominio de sus funcionalidades.</li>
+                <li><strong>Linux🐧</strong>Nivel intermedio en comandos y gestión básica del sistema operativo.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-skills-hw" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Hardware y Ensamblado</h3>
+            <ul>
+                <li><strong>Montaje y Mantenimiento de PC🛠️</strong> Nivel avanzado en ensamblaje de PC desde cero,
+                    reemplazo de componentes (GPU, RAM, refrigeración) y modificaciones en laptops (ej. baterías).</li>
+                <li><strong>Configuración de BIOS/UEFI y RAID⚙️</strong> Dominio en la configuración y optimización de
+                    BIOS/UEFI, incluyendo la gestión e implementación de arreglos RAID.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-AppPsico" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>App Web de Administración para Psicólogos (En desarrollo)</h3>
+            <p>Estoy desarrollando una plataforma web para la gestión eficiente de pacientes, turnos,
+                historiales
+                y notas de sesión, optimizando la carga administrativa de profesionales de la salud
+                mental.
+            </p>
+            <p class="tech-stack"><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript, Python, SQL</p>
+        </div>
+    </div>
+
+    <div id="modal-portafolio" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Portafolio Personal (Este sitio)</h3>
+            <p>Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend
+                fundamentales. Aunque inicialmente se desarrolló con HTML5, CSS3 y JavaScript, está concebido como un
+                proyecto evolutivo. Actualmente, es la base para futuras integraciones de frameworks y ampliaciones a
+                habilidades Full Stack, reflejando mi aprendizaje continuo.</p>
+            <p class="tech-stack"><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript</p>
+        </div>
+    </div>
+
+    <div id="modal-commerce" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Sitio Web E-commerce (En Desarrollo)</h3>
+            <p>Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend fundamentales. Este proyecto <strong>irá avanzando</strong> a medida que incorpore nuevos conocimientos del curso de desarrollo Full Stack</p>
+            <p>Simula un entorno real de comercio electrónico. Actualmente cuenta con la maquetación del catálogo y un diseño responsive (adaptable a móviles), con una estructura escalable preparada para la futura integración de un carrito funcional con JavaScript y un backend en Node.js <strong>próximamente</strong>.</p>
+            <p class="tech-stack"><strong>Tecnologías (Hasta Ahora):</strong> HTML5, CSS3</p>
+        </div>
+    </div>    
+    
+    <script src="js/script.js"></script>
+</body>
+
+</html>
