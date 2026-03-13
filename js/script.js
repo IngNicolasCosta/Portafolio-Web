@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (trigger) {
 
             const isAboutTrigger = trigger.id === 'click-about'; 
+            const isJobTrigger = trigger.closest('.job-card');
            
             let modalId;
             let canOpen = false;
@@ -64,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isAboutTrigger) {
 
                 modalId = trigger.closest('section').getAttribute('data-modal');
+                canOpen = true;
+            } else if (isJobTrigger) {
+                modalId = isJobTrigger.getAttribute('data-modal');
                 canOpen = true;
             } else {
 

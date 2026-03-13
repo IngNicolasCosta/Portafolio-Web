@@ -30,10 +30,16 @@
                 <img src="assets/imagenes/linkedin-icon.png" alt="">
                 <span>LinkedIn</span>
             </a>
-            <a href="assets/docs/CV_NICOLAS_COSTA.pdf" download="CV_Nicolas_Costa_FullStack.pdf" class="contact-button">
-                <img src="assets/imagenes/cv-icon.png" alt="">
-                <span>Descargar CV</span>
-            </a>
+            <div class="dropdown">
+                <a class="contact-button">
+                    <img src="assets/imagenes/cv-icon.png" alt="">
+                    <span>Descargar CV</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="assets/docs/Grl_Foto_Nicolas_Costa_CV.pdf" download="Nicolas_Costa_Estandar_CV">Versión Estandar</a>
+                    <a href="assets/docs/Grl_FullStack_Nicolas_Costa_CV.pdf" download="Nicolas_Costa_FullStack_CV">Versión FullStack</a>
+                </div>
+            </div>           
         </div>
     </header>
     <nav class="main-nav">
@@ -54,7 +60,7 @@
 
         <section id="about_section" class="about section transformar-section" data-modal="modal-about">
             <h2>Acerca de Mí</h2>
-            <p>Estudiante de Ingeniería en Informática (3er año finalizado) con formación en ciberseguridad (Certificado
+            <p>Estudiante de 4to año de Ingeniería en Informática con formación en ciberseguridad (Certificado
                 Google) y
                 habilidades sólidas en Python, SQL, HTML5 y Java.</p>
             <p>Apasionado por la resolución de problemas complejos y la arquitectura de software. Busco mi primera experiencia profesional como Desarrollador o Analista de Seguridad, donde pueda aplicar mi base de ingeniería y mi capacidad de aprendizaje continuo para aportar valor real al equipo.</p>
@@ -185,14 +191,14 @@
 
                 <article class="job-card">
                     <h3>Ciberseguridad de Google</h3>
-                    <p class="period">Coursera, Agosto 2024 - Marzo 2025 <a
+                    <p class="period">Coursera, Agosto 2024 - Marzo 2025 - <a
                             href="https://www.coursera.org/account/accomplishments/professional-cert/H0Z1G3L4NRIW" target="_blank">Certificado</a>
                     </p>
                 </article>
 
-                <article class="job-card">
+                <article class="job-card" data-modal="modal-fullstack">
                     <h3>Desarrollo Full Stack</h3>
-                    <p class="period">Coderhouse, Octubre 2025 - En Curso</p>
+                    <p class="period">Coderhouse, Octubre 2025 - En Curso - <a id="click-fullstack" class="click-mas">Click para ver más.</a></p> 
                 </article>
 
             </section>
@@ -208,7 +214,7 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h3>Detalles Adicionales - Acerca de Mí</h3>
-            <p>Soy un estudiante que está por empezar el 4to año de Ingeniería en Informática, lo que me proporciona una base
+            <p>Soy un estudiante de 4to año de Ingeniería en Informática, lo que me proporciona una base
                 teórica sólida. </p>
             <p>Mi *Certificado de Ciberseguridad de Google* me ha equipado con conocimientos de seguridad en redes,
                 sistemas operativos y gestión de riesgos.</p>
@@ -310,6 +316,38 @@
             <p class="tech-stack"><strong>Tecnologías (Hasta Ahora):</strong> HTML5, CSS3</p>
         </div>
     </div>    
+    <div id="modal-fullstack" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 style="color: #003050;">Desarrollo Full Stack</h2>
+            <article class="job-card">
+                <h3>Desarrollo Web Flex</h3>
+                <p class="period">Octubre 2025 - Febrero 2026 - Finalizado</p>
+            </article>
+            <article class="job-card">
+                <h3>JavaScript Flex</h3>
+                <p class="period">Enero 2026 - Marzo 2026 - En Curso</p>
+            </article>
+            <article class="job-card">
+                <h3>React Js Flex</h3>
+                <p class="period">Inicia Abril 2026</p>
+            </article>
+            <article class="job-card">
+                <h3>Desarrollo Avanzado de Backend Flex</h3>
+                <p class="period">Inicia Junio 2026</p>
+            </article>
+            <article class="job-card">
+                <h3>Diseño y Arquitectura Backend Flex</h3>
+                <p class="period">Inicia Agosto 2026</p>
+            </article>
+            <article class="job-card">
+                <h3>Testing y Escalabilidad Flex</h3>
+                <p class="period">Inicia Noviembre 2026</p>
+            </article>
+        </div>
+    </div>
+        </div>
+    </div>
     
     <script src="js/script.js"></script>
 </body>
