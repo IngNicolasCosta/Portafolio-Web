@@ -36,18 +36,26 @@
             </a>
         </div>
     </header>
+
     <nav class="main-nav">
-        <span>
-            <select id="language-switcher" class="language-selector">
-                <option value="es" selected>Español</option>
-                <option value="en">English</option>
-            </select>
-            <a href="#about_section">About Me</a>
-            <a href="#experience_section">Work Experience</a>
-            <a href="#habilidades">Skills</a>
-            <a href="#proyectos">Projects</a>
-            <a href="#education_section">Education</a>
-        </span>
+        <div class="nav-container">
+            <div class="language-selector-container">
+                <select id="language-switcher">
+                    <option value="es" selected>Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about_section">About Me</a></li>
+                <li><a href="#experience_section">Work Experience</a></li>
+                <li><a href="#habilidades">Skills</a></li>
+                <li><a href="#proyectos">Projects</a></li>
+                <li><a href="#education_section">Education</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main class="container">
