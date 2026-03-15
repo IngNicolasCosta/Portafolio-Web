@@ -426,9 +426,9 @@ body {
    margin-left: 15px;
 }
 #language-switcher {
-    background-color: var(--color-highlight); 
+    background-color: var(--color-text); 
     color: var(--color-background); 
-    border: 1px solid var(--color-highlight);
+    border: 1px solid var(--color-text);
     padding: 5px;
     border-radius: 4px;
     font-size: 0.95em;
@@ -437,6 +437,11 @@ body {
 
 #language-switcher:hover {
     background-color: var(--color-primary); 
+}
+
+#language-switcher option {
+    background-color: var(--color-primary);
+    color: var(--color-background);
 }
 
 
