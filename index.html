@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Nicolás Costa</title>
-    <link rel="stylesheet" href="styles/styles.css?v=1.1">
+    <link rel="stylesheet" href="styles/styles.css?v=1.2">
 </head>
 
 <body>
@@ -36,8 +36,8 @@
                     <span>Descargar CV</span>
                 </a>
                 <div class="dropdown-content">
-                    <a href="assets/docs/Grl_Foto_Nicolas_Costa_CV.pdf" download="Nicolas_Costa_Estandar_CV">Versión Estandar</a>
-                    <a href="assets/docs/Grl_FullStack_Nicolas_Costa_CV.pdf" download="Nicolas_Costa_FullStack_CV">Versión FullStack</a>
+                    <a href="assets/docs/foto_nicolas_costa_cv.pdf" download="nicolas_costa_estandar_cv">Versión Estandar</a>
+                    <a href="assets/docs/fullstack_nicolas_costa_cv.pdf" download="nicolas_costa_fullstack_cv">Versión FullStack</a>
                 </div>
             </div>           
         </div>
@@ -124,8 +124,8 @@
                     </div>
                 </div>
                 <div class="carousel-nav-buttons">
-                    <button class="nav-btn prev-btn" data-carousel="skillsCarousel">←</button>
-                    <button class="nav-btn next-btn" data-carousel="skillsCarousel">→</button>
+                    <button class="nav-btn prev-btn" data-carousel="skillsCarousel">❮</button>
+                    <button class="nav-btn next-btn" data-carousel="skillsCarousel">❯</button>
                 </div>
 
             </section>
@@ -152,7 +152,7 @@
                         </div>
 
                         <div class="project-card carousel-slide project-group" data-modal="modal-commerce">
-                            <h3>Web E-commerce (<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>)</h3>
+                            <h3>Web E-commerce <span class="no-break">(👉<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>👈)</span></h3>
                             <p>Desarrollo de un sitio web multipágina para una empresa (ficticia), simulando un entorno profesional.
                                 Demostrando . . .</p>
                             <p id="click-commerce" class="click-mas">Click para ver más.</p>
@@ -160,8 +160,8 @@
                     </div>
                 </div>
                 <div class="carousel-nav-buttons">
-                    <button class="nav-btn prev-btn" data-carousel="projectsCarousel">←</button>
-                    <button class="nav-btn next-btn" data-carousel="projectsCarousel">→</button>
+                    <button class="nav-btn prev-btn" data-carousel="projectsCarousel">❮</button>
+                    <button class="nav-btn next-btn" data-carousel="projectsCarousel">❯</button>
                 </div>
             </section>
         </div>
@@ -317,10 +317,41 @@
     <div id="modal-commerce" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h3>Sitio Web E-commerce (<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>)</h3>
+            <h3>Sitio Web E-commerce <span class="no-break">(👉<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>👈)</span></h3>
             <p>Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend fundamentales. Este proyecto <strong>irá avanzando</strong> a medida que incorpore nuevos conocimientos del curso de desarrollo Full Stack</p>
             <p>Simula un entorno real de comercio electrónico. Actualmente cuenta con la maquetación del catálogo y un diseño responsive (adaptable a móviles), con una estructura escalable preparada para la futura integración de un carrito funcional con JavaScript y un backend en Node.js <strong>próximamente</strong>.</p>
             <p class="tech-stack"><strong>Tecnologías (Hasta Ahora):</strong> HTML5, CSS3</p>
+            <div class="project-img">
+                <div class="carousel-container" id="commerceCarousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active-slide">
+                            <img src="assets/imagenes/projects/ecommerce/ecommerce-inicio.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Página de Inicio">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/imagenes/projects/ecommerce/ecommerce-historia.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Nuestra Historia">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/imagenes/projects/ecommerce/ecommerce-servicios.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Servicios">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/imagenes/projects/ecommerce/ecommerce-producto.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Productos">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/imagenes/projects/ecommerce/ecommerce-contacto.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Contacto">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/imagenes/projects/ecommerce/ecommerce-opiniones.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Opiniones">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/imagenes/projects/ecommerce/ecommerce-carrito.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Carrito de Compras">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav-buttons">
+                    <button class="nav-btn prev-btn" data-carousel="commerceCarousel">❮</button>
+                    <button class="nav-btn next-btn" data-carousel="commerceCarousel">❯</button>
+                </div>
+            </div>
         </div>
     </div>    
     <div id="modal-fullstack" class="modal">
@@ -328,33 +359,39 @@
             <span class="close-btn">&times;</span>
             <h2 style="color: #003050;">Desarrollo Full Stack</h2>
             <article class="job-card">
-                <h3>Desarrollo Web Flex</h3>
+                <h3>Desarrollo Web</h3>
                 <p class="period">Octubre 2025 - Febrero 2026 - Finalizado</p>
             </article>
             <article class="job-card">
-                <h3>JavaScript Flex</h3>
+                <h3>JavaScript</h3>
                 <p class="period">Enero 2026 - Marzo 2026 - En Curso</p>
             </article>
             <article class="job-card">
-                <h3>React Js Flex</h3>
+                <h3>React Js</h3>
                 <p class="period">Inicia Abril 2026</p>
             </article>
             <article class="job-card">
-                <h3>Desarrollo Avanzado de Backend Flex</h3>
+                <h3>Desarrollo Avanzado de Backend</h3>
                 <p class="period">Inicia Junio 2026</p>
             </article>
             <article class="job-card">
-                <h3>Diseño y Arquitectura Backend Flex</h3>
+                <h3>Diseño y Arquitectura Backend</h3>
                 <p class="period">Inicia Agosto 2026</p>
             </article>
             <article class="job-card">
-                <h3>Testing y Escalabilidad Flex</h3>
+                <h3>Testing y Escalabilidad</h3>
                 <p class="period">Inicia Noviembre 2026</p>
             </article>
         </div>
     </div>
-    
-    <script src="js/script.js?v=1.1"></script>
+    <div id="modal-lightbox" class="modal lightbox">
+        <span class="close-lightbox">&times;</span>
+        <button class="nav-btn prev-btn" onclick="changeLightboxSlide(-1)">❮</button>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+        <button class="nav-btn next-btn" onclick="changeLightboxSlide(1)">❯</button>
+    </div>
+
+    <script src="js/script.js?v=1.2"></script>
 </body>
 
 </html>

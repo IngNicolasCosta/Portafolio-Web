@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Nicolás Costa</title>
-    <link rel="stylesheet" href="../styles/styles.css?v=1.1">
+    <link rel="stylesheet" href="../styles/styles.css?v=1.2">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                 <img src="../assets/imagenes/linkedin-icon.png" alt="">
                 <span>LinkedIn</span>
             </a>
-            <a href="../assets/docs/Grl_Ingles_Nicolas_Costa_CV.pdf" download="CV_Nicolas_Costa_English.pdf" class="contact-button">
+            <a href="../assets/docs/ingles_nicolas_costa_cv.pdf" download="nicolas_costa_english_cv.pdf" class="contact-button">
                 <img src="../assets/imagenes/cv-icon.png" alt="">
                 <span>Download CV</span>
             </a>
@@ -145,15 +145,15 @@
                         </div>
 
                         <div class="project-card carousel-slide project-group" data-modal="modal-commerce">
-                            <h3>E-commerce Website (<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>)</h3>
+                            <h3>E-commerce Website <span class="no-break">(👉<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>👈)</span></h3>
                             <p>Development of a multi-page website for a fictitious company, simulating a professional environment. Demonstrating . . .</p>
                             <p id="click-commerce" class="click-mas">Click to see more.</p>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-nav-buttons">
-                    <button class="nav-btn prev-btn" data-carousel="projectsCarousel">←</button>
-                    <button class="nav-btn next-btn" data-carousel="projectsCarousel">→</button>
+                    <button class="nav-btn prev-btn" data-carousel="projectsCarousel">❮</button>
+                    <button class="nav-btn next-btn" data-carousel="projectsCarousel">❯</button>
                 </div>
             </section>
         </div>
@@ -308,13 +308,44 @@
     <div id="modal-commerce" class="modal">
     <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h3>E-commerce Website (<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>)</h3>
+            <h3>E-commerce Website <span class="no-break">(👉<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>👈)</span></h3>
             
             <p>A web application designed to demonstrate my progress and command of fundamental frontend technologies. This project <strong>will evolve</strong> as I apply new skills acquired during my Full Stack development course.</p>
             
             <p>It simulates a real-world e-commerce environment. It currently features the catalog layout and a responsive (mobile-friendly) design, with a scalable structure ready for the future integration of a functional shopping cart using JavaScript and a Node.js backend <strong>coming soon</strong>.</p>
             
             <p class="tech-stack"><strong>Technologies (Current):</strong> HTML5, CSS3</p>
+            <div class="project-img">
+                <div class="carousel-container" id="commerceCarousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active-slide">
+                            <img src="../assets/imagenes/projects/ecommerce/ecommerce-inicio.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Home Page">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/imagenes/projects/ecommerce/ecommerce-historia.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Our History">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/imagenes/projects/ecommerce/ecommerce-servicios.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Services">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/imagenes/projects/ecommerce/ecommerce-producto.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Products">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/imagenes/projects/ecommerce/ecommerce-contacto.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Contact">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/imagenes/projects/ecommerce/ecommerce-opiniones.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Reviews">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/imagenes/projects/ecommerce/ecommerce-carrito.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Shopping Cart">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav-buttons">
+                    <button class="nav-btn prev-btn" data-carousel="commerceCarousel">❮</button>
+                    <button class="nav-btn next-btn" data-carousel="commerceCarousel">❯</button>
+                </div>
+            </div>
         </div>
     </div>
     <div id="modal-fullstack" class="modal">
@@ -347,7 +378,13 @@
                 </article>
             </div>
     </div>
-    <script src="../js/script.js?v=1.1"></script>
+    <div id="modal-lightbox" class="modal lightbox">
+        <span class="close-lightbox">&times;</span>
+        <button class="nav-btn prev-btn" onclick="changeLightboxSlide(-1)">❮</button>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+        <button class="nav-btn next-btn" onclick="changeLightboxSlide(1)">❯</button>
+    </div>
+    <script src="../js/script.js?v=1.2"></script>
 </body>
 
 </html>

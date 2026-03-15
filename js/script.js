@@ -1,127 +1,103 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. LÓGICA DEL CARRUSEL (Navegación en la página principal)
+    // --- 1. LÓGICA DEL CARRUSEL ---
     const navButtons = document.querySelectorAll('.nav-btn');
-
     navButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // 1. Identificar el carrusel afectado por el botón
             const carouselId = button.getAttribute('data-carousel');
             const carouselContainer = document.getElementById(carouselId);
-
             if (!carouselContainer) return;
 
-            // 2. Obtener todos los slides dentro de ese carrusel
             const slides = carouselContainer.querySelectorAll('.carousel-slide');
-
-            // 3. Encontrar el índice del slide actualmente visible
             let currentSlideIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active-slide'));
+            
+            if (currentSlideIndex === -1) currentSlideIndex = 0;
 
-            // Asegurarse de que haya un slide activo (si es -1, iniciar en 0)
-            if (currentSlideIndex === -1) {
-                currentSlideIndex = 0;
-            }
-
-            // 4. Determinar la dirección de la navegación
             const direction = button.classList.contains('next-btn') ? 1 : -1;
+            let newSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
 
-            // 5. Calcular el nuevo índice
-            let newSlideIndex = currentSlideIndex + direction;
-
-            // 6. Manejar el loop (Volver al inicio/final)
-            if (newSlideIndex >= slides.length) {
-                newSlideIndex = 0;
-            } else if (newSlideIndex < 0) {
-                newSlideIndex = slides.length - 1;
-            }
-
-            // 7. Aplicar el cambio:
-
-            // Ocultar el slide actual
             slides[currentSlideIndex].classList.remove('active-slide');
             slides[currentSlideIndex].style.display = 'none';
 
-            // Mostrar el nuevo slide
             slides[newSlideIndex].classList.add('active-slide');
             slides[newSlideIndex].style.display = 'block';
         });
     });
 
-    // 2. LÓGICA DEL MODAL (Apertura)
-    
+    // --- 2. LÓGICA DE APERTURA DE MODALES ---
     document.addEventListener('click', (event) => {
-       
         const trigger = event.target.closest('.click-mas');
-
         if (trigger) {
-
             const isAboutTrigger = trigger.id === 'click-about'; 
             const isJobTrigger = trigger.closest('.job-card');
-           
-            let modalId;
-            let canOpen = false;
-            let slideContainer;
+            let modalId, canOpen = false;
 
             if (isAboutTrigger) {
-
                 modalId = trigger.closest('section').getAttribute('data-modal');
                 canOpen = true;
             } else if (isJobTrigger) {
                 modalId = isJobTrigger.getAttribute('data-modal');
                 canOpen = true;
             } else {
+                const slideContainer = trigger.closest('.carousel-slide');
+                if (slideContainer && slideContainer.classList.contains('active-slide')) {
+                    modalId = slideContainer.getAttribute('data-modal');
+                    canOpen = true;
+                }
+            }
 
-                slideContainer = trigger.closest('.carousel-slide');
-            }
-             if (slideContainer && slideContainer.classList.contains('active-slide')) {
-                modalId = slideContainer.getAttribute('data-modal');
-                canOpen = true;
-            }
             if (canOpen && modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'block';
+                const modal = document.getElementById(modalId);
+                if (modal) modal.style.display = 'block';
             }
-        }
-
         }
     });
 
-    // 3. LÓGICA DEL MODAL (Cierre)
-    const closeButtons = document.querySelectorAll('.close-btn');
-
-    // Cierre desde el botón 'X'
-    closeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = button.closest('.modal');
-            if (modal) {
-                modal.style.display = 'none';
-            }
-        });
-    });
-
-    // Cierre al hacer clic fuera del modal
+    // --- 3. LÓGICA DE CIERRE GLOBAL (Modales y Lightbox) ---
     window.addEventListener('click', (event) => {
+        // Cierre de modales normales
         if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
+        // Cierre del Lightbox
+        if (event.target.id === 'modal-lightbox') {
             event.target.style.display = 'none';
         }
     });
 
-    // 4. Inicialización: Asegurar que solo el primer slide esté visible al cargar
-    document.querySelectorAll('.carousel-container').forEach(container => {
-        const slides = container.querySelectorAll('.carousel-slide');
-        slides.forEach((slide, index) => {
-            if (index === 0) {
-                slide.classList.add('active-slide');
-                slide.style.display = 'block';
-            } else {
-                slide.classList.remove('active-slide');
-                slide.style.display = 'none';
-            }
+    const closeButtons = document.querySelectorAll('.close-btn, .close-lightbox');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            if (modal) modal.style.display = 'none';
         });
     });
 
-    // 5. LÓGICA DEL CAMBIO DE IDIOMA
+    // --- 4. LÓGICA DEL LIGHTBOX (Zoom de imágenes) ---
+    const lightbox = document.getElementById('modal-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    let activeCarouselId = ""; // Variable global para rastrear el carrusel activo
+
+    // EXPORTAMOS LA FUNCIÓN AL WINDOW PARA QUE EL HTML LA VEA
+    window.openLightbox = function(src, carouselId) {
+        if (lightbox && lightboxImg) {
+            activeCarouselId = carouselId; // Actualizamos el carrusel activo cada vez que se abre el lightbox
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+        }
+    };
+
+    // --- 5. INICIALIZACIÓN ---
+    document.querySelectorAll('.carousel-container').forEach(container => {
+        const slides = container.querySelectorAll('.carousel-slide');
+        slides.forEach((slide, index) => {
+            slide.style.display = index === 0 ? 'block' : 'none';
+            if (index === 0) slide.classList.add('active-slide');
+        });
+    });
+
+    // 6. LÓGICA DEL CAMBIO DE IDIOMA
     const languageSwitcher = document.getElementById('language-switcher');
 
     if (languageSwitcher) {
@@ -156,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. LÓGICA PARA COPIAR EMAIL AL PORTAPAPELES
+    // 7. LÓGICA PARA COPIAR EMAIL AL PORTAPAPELES
     const emailBtn = document.getElementById('btn-email');
 
     if (emailBtn) {
@@ -192,4 +168,29 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
+
+    // --- 8. FUNCIONES PARA NAVEGAR ENTRE IMÁGENES EN EL LIGHTBOX ---
+    window.changeLightboxSlide = function(direction) {
+        if (!activeCarouselId) return;
+
+        const carousel = document.getElementById(activeCarouselId);
+        if(!carousel) return;
+        // Buscamos los botones que YA existen en ese carrusel específico
+        const btnSelector = direction === 1 ? '.next-btn' : '.prev-btn';
+        
+        // Buscamos el botón que está afuera del track pero dentro del contenedor del carrusel
+        const originalBtn = carousel.parentElement.querySelector(btnSelector); 
+        
+        if (originalBtn) {
+            originalBtn.click(); // Esto dispara tu lógica de carrusel principal
+            
+            // Sincronizamos la imagen del Lightbox
+            setTimeout(() => {
+                const activeSlideImg = carousel.querySelector('.active-slide img');
+                if (activeSlideImg) {
+                    lightboxImg.src = activeSlideImg.src;
+                }
+            }, 50);
+        }
+    };
 });
