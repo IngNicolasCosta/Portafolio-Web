@@ -13,7 +13,7 @@
     box-sizing: border-box;
 }
 
-.job-card, .experience, .education, .carousel-slide, .section {
+.experience, .education, .carousel-slide, .section {
     padding: 25px;
 }
 ul{
