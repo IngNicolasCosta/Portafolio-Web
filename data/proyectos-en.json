@@ -1,0 +1,59 @@
+[
+    {
+        "id": "modal-AppPsico",
+        "titulo": "App for Psychologists (In Development)",
+        "resumen": "I am developing a web platform for the efficient management of patients, appointments, records . . .",
+        "descripcion_larga": "I am developing a web platform for the efficient management of patients, appointments, clinical records, and session notes, optimizing the administrative workload for mental health professionals.",
+        "tecnologias": "HTML5, CSS3, JavaScript, Python, SQL",
+        "imagenes": []
+    },
+    {
+        "id": "modal-portafolio",
+        "titulo": "Personal Portfolio (This Website)",
+        "resumen": "A web application designed to demonstrate my progress and command of fundamental frontend technologies . . .",
+        "descripcion_larga": "A web application designed to demonstrate my progress and command of fundamental frontend technologies. Although initially developed with HTML5, CSS3, and JavaScript, it is conceived as an <b>evolving project</b>. Currently, it serves as the foundation for future framework integrations and expansion into Full Stack capabilities, reflecting my continuous learning process.",
+        "tecnologias": "HTML5, CSS3, JavaScript, JSON",
+        "link2": "https://github.com/IngNicolasCosta/Portafolio-Web",
+        "imagenes": [
+            "../assets/imagenes/projects/portafolio/portafolio-inicio.png",
+            "../assets/imagenes/projects/portafolio/portafolio-ingles.png",
+            "../assets/imagenes/projects/portafolio/portafolio-modal.png",
+            "../assets/imagenes/projects/portafolio/portafolio-proyecto.png"
+        ]
+    },
+    {
+        "id": "modal-commerce",
+        "titulo": "Apple Shine - E-commerce Simulation",
+        "resumen": "Development of a multi-page website for a (fictitious) company, simulating a professional environment. Demonstrating . . .",
+        "descripcion_larga": "This project was developed as the final delivery for the <b>CoderHouse Web Development course</b>, with the goal of simulating a real e-commerce environment for a fictitious fruit polishing brand. The platform features a <b>multi-page</b> architecture that organizes services, products, and an interactive customer area. It implements a <b>fully responsive</b> design that ensures smooth navigation on any device, along with a dynamic and functional shopping cart that utilizes <b>LocalStorage</b> for data persistence. Additionally, it integrates a real-time review system with visual validation, highlighting a strong focus on user experience (UX) and technical precision in the front-end.",
+        "tecnologias": "HTML5, CSS3, SASS, JavaScript, Bootstrap 5, LocalStorage",
+        "link": "https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/",
+        "link2": "https://github.com/IngNicolasCosta/Proyecto-Final-CoderHouse",
+        "imagenes": [
+            "../assets/imagenes/projects/ecommerce/ecommerce-inicio.png",
+            "../assets/imagenes/projects/ecommerce/ecommerce-historia.png",
+            "../assets/imagenes/projects/ecommerce/ecommerce-servicios.png",
+            "../assets/imagenes/projects/ecommerce/ecommerce-producto.png",
+            "../assets/imagenes/projects/ecommerce/ecommerce-contacto.png",
+            "../assets/imagenes/projects/ecommerce/ecommerce-opiniones.png",
+            "../assets/imagenes/projects/ecommerce/ecommerce-carrito.png"
+        ]
+    },
+    {
+        "id": "modal-corralen",
+        "titulo": "Corralón \"El Ingeniero\" - Budget Simulator",
+        "resumen": "Project created to build a budget simulator for a construction materials warehouse . . .",
+        "descripcion_larga": "This project was developed as the final delivery for the <b>CoderHouse JavaScript course</b>, aimed at solving the complexity of construction material quoting through a dynamic and efficient simulator. Unlike a static e-commerce, this platform uses an asynchronous data-driven architecture (Fetch API) that consumes a catalog from a local JSON file, allowing stock updates without modifying the source code.<br><br>The system implements robust business logic including automatic tax calculation (VAT), subtotals, and totals in real-time, with cart state management using <b>LocalStorage</b> to ensure data persistence. It stands out for its advanced interactivity, integrating dynamic category filters, intelligent quantity controls, and a polished user experience (UX) using the <b>SweetAlert2</b> library for validations and visual feedback. All developed under a fully responsive design oriented towards technical clarity and operational efficiency in the construction sector.",
+        "tecnologias": "HTML5, CSS3, JavaScript, LocalStorage, Fetch API, SweetAlert2, JSON",
+        "link": "https://ingnicolascosta.github.io/ProyectoFinal-Costa/",
+        "link2": "https://github.com/IngNicolasCosta/ProyectoFinal-Costa",
+        "imagenes": [
+            "../assets/imagenes/projects/corralon/corralon-inicio.png",
+            "../assets/imagenes/projects/corralon/corralon-notificacion.png",
+            "../assets/imagenes/projects/corralon/corralon-categoria1.png",
+            "../assets/imagenes/projects/corralon/corralon-categoria2.png",
+            "../assets/imagenes/projects/corralon/corralon-categoria3.png",
+            "../assets/imagenes/projects/corralon/corralon-alerta.png"
+        ]
+    }
+]

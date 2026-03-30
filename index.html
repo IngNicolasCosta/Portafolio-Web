@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Nicolás Costa</title>
-    <link rel="stylesheet" href="styles/styles.css?v=1.21">
+    <link rel="stylesheet" href="styles/styles.css?v=1.22">
 </head>
 
 <body>
@@ -134,31 +134,10 @@
                 <h2>Proyectos Como Desarrollador</h2>
 
                 <div class="carousel-container" id="projectsCarousel">
-                    <div class="carousel-track">
-                        <div class="project-card carousel-slide active-slide project-group" data-modal="modal-AppPsico">
-                            <h3>App para Psicólogos (En desarrollo)</h3>
-                            <p>Estoy desarrollando una plataforma web para la gestión eficiente de pacientes, turnos,
-                                historiales
-                                . . . </p>
-                            <p id="click-psico" class="click-mas">Click para ver más.</p>
+                    <div class="carousel-track" id="track-proyectos-dinamico">
                         </div>
-
-                        <div class="project-card carousel-slide project-group" data-modal="modal-portafolio">
-                            <h3>Portafolio Personal (Este sitio)</h3>
-                            <p>Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías
-                                frontend
-                                fundamentales . . .</p>
-                            <p id="click-port" class="click-mas">Click para ver más.</p>
-                        </div>
-
-                        <div class="project-card carousel-slide project-group" data-modal="modal-commerce">
-                            <h3>Web E-commerce <span class="no-break">(👉<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>👈)</span></h3>
-                            <p>Desarrollo de un sitio web multipágina para una empresa (ficticia), simulando un entorno profesional.
-                                Demostrando . . .</p>
-                            <p id="click-commerce" class="click-mas">Click para ver más.</p>
-                        </div>
-                    </div>
                 </div>
+                
                 <div class="carousel-nav-buttons">
                     <button class="nav-btn prev-btn" data-carousel="projectsCarousel">❮</button>
                     <button class="nav-btn next-btn" data-carousel="projectsCarousel">❯</button>
@@ -289,71 +268,35 @@
             </ul>
         </div>
     </div>
-    <div id="modal-AppPsico" class="modal">
+    <div id="modal-proyecto-dinamico" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h3>App Web de Administración para Psicólogos (En desarrollo)</h3>
-            <p>Estoy desarrollando una plataforma web para la gestión eficiente de pacientes, turnos,
-                historiales
-                y notas de sesión, optimizando la carga administrativa de profesionales de la salud
-                mental.
-            </p>
-            <p class="tech-stack"><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript, Python, SQL</p>
-        </div>
-    </div>
+            
+            <h3 id="modal-titulo">Título del Proyecto</h3>
+            
+            <p class="modal-descripcion-larga"></p>
+            
+            <p class="tech-stack"><strong>Tecnologías:</strong> <span></span></p>
+            
+            <a href="#" target="_blank" class="contact-button btn-proyecto-link">
+                <span>Ver Pagina Web</span>
+            </a>
+            <a href="#" target="_blank" class="contact-button btn-proyecto-link2">
+                <span>Ver Repositorio</span>
+            </a>
 
-    <div id="modal-portafolio" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Portafolio Personal (Este sitio)</h3>
-            <p>Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend
-                fundamentales. Aunque inicialmente se desarrolló con HTML5, CSS3 y JavaScript, está concebido como un
-                proyecto evolutivo. Actualmente, es la base para futuras integraciones de frameworks y ampliaciones a
-                habilidades Full Stack, reflejando mi aprendizaje continuo.</p>
-            <p class="tech-stack"><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript</p>
-        </div>
-    </div>
-
-    <div id="modal-commerce" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Sitio Web E-commerce <span class="no-break">(👉<a href="https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/" target="_blank">Link</a>👈)</span></h3>
-            <p>Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend fundamentales. Este proyecto <strong>irá avanzando</strong> a medida que incorpore nuevos conocimientos del curso de desarrollo Full Stack</p>
-            <p>Simula un entorno real de comercio electrónico. Actualmente cuenta con la maquetación del catálogo y un diseño responsive (adaptable a móviles), con una estructura escalable preparada para la futura integración de un carrito funcional con JavaScript y un backend en Node.js <strong>próximamente</strong>.</p>
-            <p class="tech-stack"><strong>Tecnologías (Hasta Ahora):</strong> HTML5, CSS3</p>
-            <div class="project-img">
-                <div class="carousel-container" id="commerceCarousel">
-                    <div class="carousel-track">
-                        <div class="carousel-slide active-slide">
-                            <img src="assets/imagenes/projects/ecommerce/ecommerce-inicio.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Página de Inicio">
+            <div class="project-img" style="display: none; margin-top: 20px;">
+                <div class="carousel-container" id="modalCarousel">
+                    <div class="carousel-track" id="modal-track-fotos">
                         </div>
-                        <div class="carousel-slide">
-                            <img src="assets/imagenes/projects/ecommerce/ecommerce-historia.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Nuestra Historia">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="assets/imagenes/projects/ecommerce/ecommerce-servicios.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Servicios">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="assets/imagenes/projects/ecommerce/ecommerce-producto.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Productos">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="assets/imagenes/projects/ecommerce/ecommerce-contacto.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Contacto">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="assets/imagenes/projects/ecommerce/ecommerce-opiniones.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Opiniones">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="assets/imagenes/projects/ecommerce/ecommerce-carrito.png" onclick="openLightbox(this.src, 'commerceCarousel')" style="cursor: zoom-in;" alt="Web E-commerce - Carrito de Compras">
-                        </div>
-                    </div>
                 </div>
                 <div class="carousel-nav-buttons">
-                    <button class="nav-btn prev-btn" data-carousel="commerceCarousel">❮</button>
-                    <button class="nav-btn next-btn" data-carousel="commerceCarousel">❯</button>
+                    <button class="nav-btn prev-btn" data-carousel="modalCarousel">❮</button>
+                    <button class="nav-btn next-btn" data-carousel="modalCarousel">❯</button>
                 </div>
             </div>
         </div>
-    </div>    
+    </div> 
     <div id="modal-fullstack" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -368,7 +311,7 @@
             </article>
             <article class="job-card">
                 <h3>React Js</h3>
-                <p class="period">Inicia Abril 2026</p>
+                <p class="period">Abril 2026 - Mayo 2026 - En Curso</p>
             </article>
             <article class="job-card">
                 <h3>Desarrollo Avanzado de Backend</h3>
@@ -391,7 +334,7 @@
         <button class="nav-btn next-btn" onclick="changeLightboxSlide(1)">❯</button>
     </div>
 
-    <script src="js/script.js?v=1.2"></script>
+    <script src="js/script.js?v=1.3"></script>
 </body>
 
 </html>

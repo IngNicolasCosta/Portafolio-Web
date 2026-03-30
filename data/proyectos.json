@@ -1,0 +1,59 @@
+[
+    {
+        "id": "modal-AppPsico",
+        "titulo": "App para Psicologos (En desarrollo)",
+        "resumen": "Estoy desarrollando una plataforma web para la gestión eficiente de pacientes, turnos, historiales . . .",
+        "descripcion_larga": "Estoy desarrollando una plataforma web para la gestión eficiente de pacientes, turnos, historiales y notas de sesión, optimizando la carga administrativa de profesionales de la salud mental.",
+        "tecnologias": "HTML5, CSS3, JavaScript, Python, SQL",
+        "imagenes": []
+    },
+    {
+        "id": "modal-portafolio",
+        "titulo": "Portafolio Personal (Este Sitio)",
+        "resumen": "Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend fundamentales . . .",
+        "descripcion_larga": "Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend fundamentales. Aunque inicialmente se desarrolló con HTML5, CSS3 y JavaScript, está concebido como un proyecto evolutivo. Actualmente, es la base para futuras integraciones de frameworks y ampliaciones a habilidades Full Stack, reflejando mi aprendizaje continuo.",
+        "tecnologias": "HTML5, CSS3, JavaScript, Json",
+        "link2": "https://github.com/IngNicolasCosta/Portafolio-Web",
+        "imagenes": [
+            "assets/imagenes/projects/portafolio/portafolio-inicio.png",
+            "assets/imagenes/projects/portafolio/portafolio-ingles.png",
+            "assets/imagenes/projects/portafolio/portafolio-modal.png",
+            "assets/imagenes/projects/portafolio/portafolio-proyecto.png"
+        ]
+    },
+    {
+        "id": "modal-commerce",
+        "titulo": "Apple Shine - E-commerce Simulation",
+        "resumen": "Desarrollo de un sitio web multipágina para una empresa (ficticia), simulando un entorno profesional. Demostrando . . .",
+        "descripcion_larga": "Este proyecto fue desarrollado como entrega final para el curso de <b>Desarrollo Web de CoderHouse</b>, con el objetivo de simular un entorno real de comercio electrónico para una marca ficticia de pulido de frutas. La plataforma cuenta con una arquitectura <b>multi-página</b> que organiza servicios, productos y un área interactiva de clientes. Implementa un diseño <b>fully responsive</b> que garantiza una navegación fluida en cualquier dispositivo, junto con un carrito de compras dinámico y funcional que utiliza <b>LocalStorage</b> para la persistencia de datos. Además, integra un sistema de reseñas en tiempo real con validación visual, destacando un fuerte enfoque en la experiencia del usuario (UX) y la prolijidad técnica en el front-end.",
+        "tecnologias": "HTML5, CSS3, SASS, JavaScript, Bootstrap 5, LocalStorage",
+        "link": "https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/",
+        "link2": "https://github.com/IngNicolasCosta/Proyecto-Final-CoderHouse",
+        "imagenes": [
+            "assets/imagenes/projects/ecommerce/ecommerce-inicio.png",
+            "assets/imagenes/projects/ecommerce/ecommerce-historia.png",
+            "assets/imagenes/projects/ecommerce/ecommerce-servicios.png",
+            "assets/imagenes/projects/ecommerce/ecommerce-producto.png",
+            "assets/imagenes/projects/ecommerce/ecommerce-contacto.png",
+            "assets/imagenes/projects/ecommerce/ecommerce-opiniones.png",
+            "assets/imagenes/projects/ecommerce/ecommerce-carrito.png"
+        ]
+    },
+    {
+        "id": "modal-corralen",
+        "titulo": "Corralón \"El Ingeniero\" - Simulador de Presupuestos",
+        "resumen": "Proyecto realizado para crear un simulador de presupuestos para un corralon de materiales de construccion . . .",
+        "descripcion_larga": "Este proyecto fue desarrollado como entrega final para el curso de JavaScript en CoderHouse, con el objetivo de resolver la complejidad en la cotización de materiales de construcción mediante un simulador dinámico y eficiente. A diferencia de un e-commerce estático, esta plataforma utiliza una arquitectura basada en datos asíncronos (Fetch API) que consume un catálogo desde un archivo JSON local, permitiendo actualizaciones de stock sin modificar el código fuente.<br><br>El sistema implementa una lógica de negocio robusta que incluye el cálculo automático de impuestos (IVA), subtotales y totales en tiempo real, con una gestión de estado del carrito que utiliza LocalStorage para garantizar la persistencia de los datos. Se destaca por su interactividad avanzada, integrando filtros dinámicos por categorías, controles de cantidad inteligentes y una experiencia de usuario (UX) pulida mediante el uso de la librería SweetAlert2 para validaciones y feedbacks visuales. Todo bajo un diseño fully responsive orientado a la claridad técnica y la eficiencia operativa en el sector de la construcción.",
+        "tecnologias": "HTML5, CSS3, JavaScript, LocalStorage, Fetch API, SweetAlert2, Json",
+        "link": "https://ingnicolascosta.github.io/ProyectoFinal-Costa/",
+        "link2": "https://github.com/IngNicolasCosta/ProyectoFinal-Costa",
+        "imagenes": [
+            "assets/imagenes/projects/corralon/corralon-inicio.png",
+            "assets/imagenes/projects/corralon/corralon-notificacion.png",
+            "assets/imagenes/projects/corralon/corralon-categoria1.png",
+            "assets/imagenes/projects/corralon/corralon-categoria2.png",
+            "assets/imagenes/projects/corralon/corralon-categoria3.png",
+            "assets/imagenes/projects/corralon/corralon-alerta.png"
+        ]
+    }
+]
