@@ -1,41 +1,77 @@
-# 🚀 Portafolio Profesional - Nicolás Costa
+# 🚀 Portfolio · Nicolás Costa
 
-Este proyecto es una plataforma web personal diseñada para centralizar mi trayectoria académica como **estudiante de 4to año de Ingeniería en Informática** y mis desarrollos como **Full Stack Developer**. Concebido como un proyecto evolutivo, aplica conceptos de arquitectura de software para separar la lógica de los datos.
+Portfolio personal de **Nicolás Costa**: Desarrollador Full Stack, cofundador de **CTRL-IA** y estudiante de 4to año de Ingeniería en Informática (USAL).
 
-## 🏗️ Arquitectura Técnica: Data-Driven
+🔗 **[ingnicolascosta.github.io/Portafolio-Web](https://ingnicolascosta.github.io/Portafolio-Web/)**
 
-A diferencia de un portafolio estático, este sitio utiliza un sistema de **hidratación dinámica**:
-* **Carga Asíncrona:** Uso de `Fetch API` para consumir el catálogo de proyectos desde archivos `.json` locales.
-* **Componente Único de Modal:** Se implementó un único modal "maestro" en el HTML que se rellena dinámicamente según el ID del proyecto seleccionado, optimizando el rendimiento y el mantenimiento.
-* **Internacionalización (i18n):** Soporte completo para Español e Inglés mediante la carga selectiva de archivos de datos (`proyectos.json` / `proyectos-en.json`) según el contexto de la URL.
+## ✨ Qué tiene
 
-## 🌟 Funcionalidades Principales
+* **Diseño oscuro con animaciones**: hero con efecto de tipeo, fondo animado, brillo que sigue al mouse en las tarjetas y animaciones al hacer scroll (se desactivan solas si el sistema pide "reducir movimiento").
+* **Proyectos data-driven**: la grilla, los filtros por categoría, el modal y la galería de capturas se generan desde un único archivo `data/proyectos.json`.
+* **Bilingüe sin recargar (ES / EN)**: el idioma se recuerda entre visitas y se puede forzar con `?lang=en`.
+* **Galería + lightbox** con navegación por teclado (← → Esc).
+* **Responsive**: menú hamburguesa, modal tipo "sheet" en celulares.
+* **Sin frameworks ni build**: HTML, CSS y JavaScript vanilla. Se publica tal cual en GitHub Pages.
 
-* **Galería Dinámica:** Generación automática de tarjetas de proyectos en el carrusel principal desde la base de datos JSON.
-* **Carruseles Inteligentes:** Cada proyecto dentro de su modal cuenta con su propio carrusel de imágenes autogenerado.
-* **Renderizado Condicional:** Los botones de "Página Web" y "Repositorio" solo se muestran si el proyecto cuenta con dichos enlaces en el JSON.
-* **Descripciones Enriquecidas:** Soporte para etiquetas HTML dentro de los datos para resaltar palabras clave y mejorar la legibilidad.
-* **Navegación Fluida:** Sistema de `Lightbox` para la visualización ampliada de capturas de pantalla de los proyectos.
+## 📂 Estructura
 
-## 🛠️ Tecnologías Utilizadas
+```
+index.html                  → única página (el español vive acá)
+pages/english.html          → redirige a index.html?lang=en (para no romper links viejos)
+js/i18n.js                  → traducciones al inglés y textos que genera el JS
+js/script.js                → lógica: proyectos, filtros, modal, galería, idioma, animaciones
+styles/styles.css           → todo el diseño
+data/proyectos.json         → la "base de datos" de proyectos (ES + EN)
+assets/imagenes/perfil.jpg  → foto del hero
+assets/imagenes/projects/   → una carpeta por proyecto con sus capturas
+assets/docs/                → CVs descargables
+```
 
-* **HTML5** & **CSS3** (Flexbox, Custom Properties).
-* **JavaScript Vanilla** (ES6+, Programación Asíncrona).
-* **JSON** (Estructura de datos para persistencia de contenido).
-* **Google Fonts** (Recursos visuales).
+## ➕ Cómo agregar un proyecto
 
-## 📂 Estructura del Proyecto
+1. **Creá una carpeta** en `assets/imagenes/projects/` con un nombre corto, por ejemplo `cauce/`.
+2. **Poné adentro las capturas** (`.png`, `.jpg` o `.webp`). La **primera** de la lista va a ser la portada de la tarjeta. Si todavía no tenés capturas, se genera una portada automática con el nombre.
+3. **Agregá una entrada** en `data/proyectos.json` (el orden del archivo es el orden en la página):
 
-* `/index.html`: Estructura principal en español.
-* `/pages/english.html`: Versión del portafolio en inglés.
-* `/js/script.js`: Lógica de renderizado dinámico, carruseles y manejo de idiomas.
-* `/data/proyectos.json`: Base de datos de proyectos en español.
-* `/data/proyectos-en.json`: Base de datos de proyectos en inglés.
-* `/styles/styles.css`: Diseño responsive y animaciones de interfaz.
+```json
+{
+    "id": "cauce",
+    "categoria": "productos",
+    "estado": "produccion",
+    "carpeta": "cauce",
+    "portada": "Cauce",
+    "imagenes": ["inicio.png", "dashboard.png"],
+    "tecnologias": ["Next.js", "PostgreSQL"],
+    "demo": "https://...",
+    "repo": "https://github.com/...",
+    "es": { "titulo": "...", "resumen": "...", "descripcion": "..." },
+    "en": { "titulo": "...", "resumen": "...", "descripcion": "..." }
+}
+```
 
-## 👤 Autor
+| Campo | Para qué sirve |
+| --- | --- |
+| `id` | Identificador único (sin espacios). |
+| `categoria` | `clientes`, `productos`, `academicos` o `personales`. Define el filtro y el color. |
+| `estado` | `produccion`, `desarrollo`, `finalizado` o `pausa`. |
+| `formato` | *(opcional)* `"movil"` si las capturas son verticales (app de celular): la portada las muestra como un teléfono. |
+| `carpeta` | Nombre de la carpeta dentro de `assets/imagenes/projects/`. |
+| `imagenes` | Solo los **nombres de archivo**, en el orden en que se muestran. Puede ir vacío `[]`. |
+| `portada` | *(opcional)* Texto grande de la portada automática cuando no hay capturas. |
+| `demo` / `repo` | *(opcionales)* Si están vacíos, el botón no aparece. |
+| `descripcion` | Admite HTML simple (`<b>`, `<br>`) para resaltar palabras. |
 
-* **Nicolás Costa** - *Estudiante de 4to año de Ingeniería en Informática*.
+El contador de proyectos del hero y los filtros se actualizan solos.
+
+## 🧪 Probarlo localmente
+
+Como los proyectos se cargan con `fetch`, hay que abrirlo con un servidor (no con doble click):
+
+```bash
+python -m http.server 5510
+```
+
+y entrar a `http://localhost:5510`.
 
 ---
-*Este portafolio es un proyecto en constante evolución, reflejando mi aprendizaje continuo en el desarrollo de software.*
+*Proyecto en constante evolución, como mi aprendizaje.*

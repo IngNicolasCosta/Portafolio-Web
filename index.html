@@ -4,337 +4,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Nicolás Costa</title>
-    <link rel="stylesheet" href="styles/styles.css?v=1.22">
+    <title>Nicolás Costa · Desarrollador Full Stack</title>
+    <meta name="description" content="Portfolio de Nicolás Costa: Desarrollador Full Stack, cofundador de CTRL-IA y estudiante de Ingeniería en Informática. Proyectos con React, Next.js, Node.js y PostgreSQL.">
+    <meta name="theme-color" content="#06080f">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nicolás Costa · Desarrollador Full Stack">
+    <meta property="og:description" content="Cofundador de CTRL-IA. Construyo productos web de punta a punta.">
+    <meta property="og:image" content="https://ingnicolascosta.github.io/Portafolio-Web/assets/imagenes/perfil.jpg">
+    <meta property="og:url" content="https://ingnicolascosta.github.io/Portafolio-Web/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f8cff'/%3E%3Cstop offset='1' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2306080f'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='url(%23g)'%3ENC%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css?v=2.0">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
+    <!-- Sprite de íconos: se usan con <svg><use href="#i-..."/></svg> -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+        <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></g></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        <symbol id="i-external" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></g></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></g></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></g></symbol>
+        <symbol id="i-image" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></g></symbol>
+    </svg>
 
-    <header class="header">
-        <h1>Nicolás Costa</h1>
-        <p>Estudiante de Ingeniería en Informática y Desarrollo Full Stack</p>
-        <div class="contact-info">
-            <a href="https://wa.me/5491127770315" target="_blank" class="contact-button">
-                <img src="assets/imagenes/whatsapp-icon.png" alt="">
-                <span>+54 9 11 2777-0315</span>
-            </a>
-            <a href="mailto:nicolascosta15112004@gmail.com" class="contact-button" id="btn-email">
-                <img src="assets/imagenes/gmail-icon.png" alt="">
-                <span>nicolascosta15112004@gmail.com</span>
-            </a>
-            <a href="https://github.com/IngNicolasCosta" class="contact-button" target="_blank">
-                <img src="assets/imagenes/github-icon.png" alt="">
-                <span>GitHub</span>
-            </a>
-            <a href="https://www.linkedin.com/in/nicolas-costa-554612308/" class="contact-button" target="_blank">
-                <img src="assets/imagenes/linkedin-icon.png" alt="">
-                <span>LinkedIn</span>
-            </a>
-            <div class="dropdown">
-                <a class="contact-button">
-                    <img src="assets/imagenes/cv-icon.png" alt="">
-                    <span>Descargar CV</span>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="bg" aria-hidden="true">
+        <div class="bg__grid"></div>
+        <div class="bg__blob bg__blob--1"></div>
+        <div class="bg__blob bg__blob--2"></div>
+        <div class="bg__blob bg__blob--3"></div>
+    </div>
+
+    <!-- NAV -->
+    <header class="nav" id="nav">
+        <div class="container nav__inner">
+            <a href="#inicio" class="nav__logo" aria-label="Inicio">NC<span>.</span></a>
+
+            <nav class="nav__menu" id="nav-menu">
+                <ul>
+                    <li><a href="#sobre-mi" data-i18n="nav.sobre">Sobre mí</a></li>
+                    <li><a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a></li>
+                    <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
+                    <li><a href="#trayectoria" data-i18n="nav.trayectoria">Trayectoria</a></li>
+                    <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav__actions">
+                <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Cambiar idioma / Switch language">
+                    <span data-lang="es">ES</span><span data-lang="en">EN</span>
+                </button>
+                <a class="btn btn--sm btn--primary js-cv" href="assets/docs/nicolas_costa_cv.pdf" download="Nicolas_Costa_CV.pdf">
+                    <svg class="icon"><use href="#i-download" /></svg><span>CV</span>
                 </a>
-                <div class="dropdown-content">
-                    <a href="assets/docs/foto_nicolas_costa_cv.pdf" download="nicolas_costa_estandar_cv">Versión Estandar</a>
-                    <a href="assets/docs/fullstack_nicolas_costa_cv.pdf" download="nicolas_costa_fullstack_cv">Versión FullStack</a>
-                </div>
-            </div>           
+                <button class="nav__burger" id="menu-toggle" type="button" aria-label="Menú" aria-expanded="false">
+                    <span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
-    <nav class="main-nav">
-        <div class="nav-container">
-            <div class="language-selector-container">
-                <select id="language-switcher">
-                    <option value="es" selected>Español</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
 
-            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about_section">Acerca de Mí</a></li>
-                <li><a href="#experience_section">Experiencia</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#education_section">Formación</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="container">
-
-        <section id="about_section" class="about section transformar-section" data-modal="modal-about">
-            <h2>Acerca de Mí</h2>
-            <p>Estudiante de 4to año de Ingeniería en Informática con formación en ciberseguridad (Certificado
-                Google) y
-                habilidades sólidas en Python, SQL, HTML5 y Java.</p>
-            <p>Apasionado por la resolución de problemas complejos y la arquitectura de software. Busco mi primera experiencia profesional como Desarrollador o Analista de Seguridad, donde pueda aplicar mi base de ingeniería y mi capacidad de aprendizaje continuo para aportar valor real al equipo.</p>
-            <p id="click-about" class="click-mas">Click para ver más.</p>
-        </section>
-
-
-        <div class="skills-projects-group">
-            <section class="skills section transformar-section" id="habilidades">
-                <h2>Habilidades Técnicas</h2>
-
-                <div class="carousel-container" id="skillsCarousel">
-                    <div class="carousel-track">
-
-                        <div class="carousel-slide skill-group active-slide" data-modal="modal-skills-prog">
-                            <h3>Programación</h3>
-                            <ul>
-                                <li><strong>Python🐍</strong> Conocimiento básico en sintaxis y estructuras
-                                    fundamentales.</li>
-                                <li><strong>Java☕</strong> Nivel intermedio en desarrollo . . .</li>
-                            </ul>
-                            <p id="click-prog" class="click-mas">Click para ver más.</p>
-                        </div>
-
-                        <div class="carousel-slide skill-group" data-modal="modal-skills-bd">
-                            <h3>Bases de Datos y Estructura de la Información</h3>
-                            <ul>
-                                <li><strong>SQL💾</strong> Conocimiento básico a intermedio en consultas, manipulación y
-                                    gestión de
-                                    bases de datos relacionales.</li>
-                                <li><strong>EXCEL📊</strong> Nivel intermedio a avan . . .</li>
-                            </ul>
-                            <p id="click-bd" class="click-mas">Click para ver más.</p>
-                        </div>
-
-                        <div class="carousel-slide skill-group" data-modal="modal-skills-so">
-                            <h3>Sistemas Operativos</h3>
-                            <ul>
-                                <li><strong>Windows🖥️</strong> Nivel avanzado por uso diario y dominio de sus
-                                    funcionalidades.</li>
-                                <li><strong>Linux🐧</strong>Nivel . . .</li>
-                            </ul>
-                            <p id="click-so" class="click-mas">Click para ver más.</p>
-                        </div>
-
-                        <div class="carousel-slide skill-group" data-modal="modal-skills-hw">
-                            <h3>Hardware y Ensamblado</h3>
-                            <ul>
-                                <li><strong>Montaje y Mantenimiento de PC🛠️</strong> Nivel avanzado en ensamblaje de PC desde cero,
-                    reemplazo de compon. . .</li>
-                            </ul>
-                            <p id="click-hw" class="click-mas">Click para ver más.</p>
-                        </div>
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <div class="container hero__grid">
+                <div class="hero__text">
+                    <span class="pill pill--live reveal"><span class="pill__dot"></span><span data-i18n="hero.disponible">Abierto a nuevos proyectos y oportunidades</span></span>
+                    <p class="hero__hello mono reveal" data-i18n="hero.hola">Hola, soy</p>
+                    <h1 class="hero__name reveal">Nicolás <span class="gradient-text">Costa</span></h1>
+                    <p class="hero__role mono reveal" aria-live="polite"><span class="hero__prompt">&gt;</span> <span id="typed">Desarrollador Full Stack</span><span class="caret"></span></p>
+                    <p class="hero__pitch reveal" data-i18n="hero.pitch">Desarrollador Full Stack y cofundador de <a href="https://ctrl-ia.com.ar" target="_blank" rel="noopener">CTRL-IA</a>. Construyo productos web de punta a punta: desde el relevamiento con el cliente hasta el deploy en producción.</p>
+                    <div class="hero__cta reveal">
+                        <a href="#proyectos" class="btn btn--primary"><span data-i18n="hero.verProyectos">Ver proyectos</span><svg class="icon"><use href="#i-arrow" /></svg></a>
+                        <a href="#contacto" class="btn btn--ghost" data-i18n="hero.hablemos">Hablemos</a>
+                    </div>
+                    <div class="hero__socials reveal">
+                        <a href="https://github.com/IngNicolasCosta" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon"><use href="#i-github" /></svg></a>
+                        <a href="https://www.linkedin.com/in/nicolas-costa-554612308/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin" /></svg></a>
+                        <a href="https://wa.me/5491127770315" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon"><use href="#i-whatsapp" /></svg></a>
+                        <a href="mailto:nicolascosta15112004@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-mail" /></svg></a>
+                        <span class="hero__location mono">📍 Pilar, Buenos Aires</span>
                     </div>
                 </div>
-                <div class="carousel-nav-buttons">
-                    <button class="nav-btn prev-btn" data-carousel="skillsCarousel">❮</button>
-                    <button class="nav-btn next-btn" data-carousel="skillsCarousel">❯</button>
+
+                <div class="hero__visual reveal">
+                    <div class="avatar">
+                        <div class="avatar__ring"></div>
+                        <img src="assets/imagenes/perfil.jpg" alt="Foto de Nicolás Costa" width="640" height="640">
+                    </div>
+                    <span class="float-chip float-chip--1"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="">React</span>
+                    <span class="float-chip float-chip--2"><img class="invert" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nextjs/nextjs-original.svg" alt="">Next.js</span>
+                    <span class="float-chip float-chip--3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="">Node.js</span>
+                    <span class="float-chip float-chip--4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="">PostgreSQL</span>
                 </div>
+            </div>
+            <a href="#sobre-mi" class="scroll-hint" aria-label="Bajar"><span></span></a>
+        </section>
 
-            </section>
+        <!-- STATS -->
+        <section class="container stats" aria-label="Resumen">
+            <div class="stat spot reveal">
+                <strong class="stat__num"><span data-count="4">4</span>°</strong>
+                <span class="stat__label" data-i18n="stats.anio">año de Ingeniería en Informática</span>
+            </div>
+            <div class="stat spot reveal">
+                <strong class="stat__num"><span data-count="8" id="stat-proyectos">8</span>+</strong>
+                <span class="stat__label" data-i18n="stats.proyectos">proyectos construidos</span>
+            </div>
+            <div class="stat spot reveal">
+                <strong class="stat__num gradient-text">CTRL-IA</strong>
+                <span class="stat__label" data-i18n="stats.empresa">empresa de software que cofundé</span>
+            </div>
+            <div class="stat spot reveal">
+                <strong class="stat__num">B2</strong>
+                <span class="stat__label" data-i18n="stats.ingles">inglés certificado</span>
+            </div>
+        </section>
 
-            <section class="projects section transformar-section" id="proyectos">
-                <h2>Proyectos Como Desarrollador</h2>
+        <!-- SOBRE MÍ -->
+        <section class="section" id="sobre-mi">
+            <div class="container">
+                <header class="section__head reveal">
+                    <span class="eyebrow mono" data-i18n="sobre.eyebrow">01 / Sobre mí</span>
+                    <h2 data-i18n="sobre.titulo">Ingeniería, código y <span class="gradient-text">clientes reales</span>.</h2>
+                </header>
 
-                <div class="carousel-container" id="projectsCarousel">
-                    <div class="carousel-track" id="track-proyectos-dinamico">
+                <div class="about">
+                    <div class="about__text reveal">
+                        <p data-i18n="sobre.p1">Soy estudiante avanzado de <strong>Ingeniería en Informática</strong> (4to año, USAL) y Desarrollador Full Stack con un fuerte perfil emprendedor. Como cofundador de <strong>CTRL-IA</strong>, gestiono el ciclo de vida completo de soluciones de software a medida: relevamiento de requerimientos, diseño, desarrollo y despliegue.</p>
+                        <p data-i18n="sobre.p2">Trabajo con <strong>React, Next.js, Node.js, PostgreSQL y Supabase</strong>, y tengo una base sólida en bases de datos, fundamentos de ciberseguridad (certificado de Google) y un nivel avanzado en hardware gracias a años de soporte técnico freelance.</p>
+                        <p data-i18n="sobre.p3">Me destaco por traducir conceptos técnicos complejos de forma clara, el trato directo con clientes y las ganas de aprender todo el tiempo. Fuera del código, soy fan de los videojuegos — tanto que terminé armando mi propia wiki de videojuegos, <strong>Wikey</strong>.</p>
+                        <ul class="chips">
+                            <li data-i18n="soft.problemas">Resolución de problemas</li>
+                            <li data-i18n="soft.autonomia">Autonomía</li>
+                            <li data-i18n="soft.equipo">Trabajo en equipo</li>
+                            <li data-i18n="soft.clientes">Trato con clientes</li>
+                            <li data-i18n="soft.adaptabilidad">Adaptabilidad</li>
+                            <li data-i18n="soft.aprendizaje">Aprendizaje continuo</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-window spot reveal" aria-label="Resumen en formato código">
+                        <div class="code-window__bar">
+                            <span></span><span></span><span></span>
+                            <p class="mono">nicolas.js</p>
                         </div>
+<pre class="code-window__body mono" data-i18n="sobre.codigo"><span class="c-kw">const</span> <span class="c-var">nicolas</span> = {
+  <span class="c-key">rol</span>: <span class="c-str">"Full Stack Developer"</span>,
+  <span class="c-key">empresa</span>: <span class="c-str">"CTRL-IA"</span>,
+  <span class="c-key">estudios</span>: <span class="c-str">"Ing. en Informática · USAL"</span>,
+  <span class="c-key">stack</span>: [<span class="c-str">"React"</span>, <span class="c-str">"Next.js"</span>, <span class="c-str">"Node.js"</span>, <span class="c-str">"PostgreSQL"</span>],
+  <span class="c-key">idiomas</span>: [<span class="c-str">"Español"</span>, <span class="c-str">"Inglés B2"</span>],
+  <span class="c-key">hobbies</span>: [<span class="c-str">"videojuegos"</span>, <span class="c-str">"armar PCs"</span>],
+  <span class="c-key">disponible</span>: <span class="c-bool">true</span>,
+};
+
+<span class="c-var">nicolas</span>.<span class="c-fn">construir</span>(<span class="c-str">"tu próximo proyecto"</span>); <span class="c-com">// 🚀</span></pre>
+                    </div>
                 </div>
-                
-                <div class="carousel-nav-buttons">
-                    <button class="nav-btn prev-btn" data-carousel="projectsCarousel">❮</button>
-                    <button class="nav-btn next-btn" data-carousel="projectsCarousel">❯</button>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section class="section" id="proyectos">
+            <div class="container">
+                <header class="section__head reveal">
+                    <span class="eyebrow mono" data-i18n="proyectos.eyebrow">02 / Proyectos</span>
+                    <h2 data-i18n="proyectos.titulo">Cosas que <span class="gradient-text">construí</span>.</h2>
+                    <p class="section__lead" data-i18n="proyectos.lead">Desde sistemas para clientes reales hasta productos propios y proyectos por pura pasión.</p>
+                </header>
+
+                <div class="filters reveal" id="filtros" role="tablist" aria-label="Filtrar proyectos"></div>
+                <div class="projects-grid" id="grilla-proyectos"></div>
+
+                <div class="coming-soon reveal">
+                    <span class="mono" data-i18n="proyectos.horno">// en el horno</span>
+                    <ul>
+                        <li data-i18n="proyectos.horno1">Minecraft técnico y Redstone dentro de Wikey</li>
+                        <li data-i18n="proyectos.horno2">Un videojuego propio</li>
+                        <li data-i18n="proyectos.horno3">Nuevos proyectos con CTRL-IA</li>
+                    </ul>
                 </div>
-            </section>
-        </div>
-        <div class="two-columns">
-            <section class="experience section" id="experience_section">
-                <h2>Experiencia Laboral</h2>
+            </div>
+        </section>
 
-                <article class="job-card">
-                    <h3>Técnico en Hardware FreeLancer</h3>
-                    <p class="period">12/2021 - Actual</p>
-                    <ul>
-                        <li>Instalación de software y hardware.</li>
-                        <li>Resolución de problemas y toma de decisiones.</li>
-                        <li>Comunicación efectiva y trabajo bajo presión.</li>
-                    </ul>
-                </article>
+        <!-- STACK -->
+        <section class="section" id="stack">
+            <div class="container">
+                <header class="section__head reveal">
+                    <span class="eyebrow mono" data-i18n="stack.eyebrow">03 / Stack</span>
+                    <h2 data-i18n="stack.titulo">Mis <span class="gradient-text">herramientas</span>.</h2>
+                </header>
+            </div>
+            <div class="marquee reveal" aria-hidden="true">
+                <div class="marquee__track" id="marquee"></div>
+            </div>
+            <div class="container">
+                <div class="skills-grid" id="skills"></div>
+            </div>
+        </section>
 
-                <article class="job-card">
-                    <h3>Soporte Técnico FreeLancer</h3>
-                    <p class="period">01/2022 - Actual</p>
-                    <ul>
-                        <li>Restauracion de sistemas comprometidos.</li>
-                        <li>Educación a usuarios en seguridad (phishing, backups).</li>
-                    </ul>
-                </article>
-            </section>
-            <section class="education section" id="education_section">
-                <h2>Formación</h2>
+        <!-- TRAYECTORIA -->
+        <section class="section" id="trayectoria">
+            <div class="container">
+                <header class="section__head reveal">
+                    <span class="eyebrow mono" data-i18n="tray.eyebrow">04 / Trayectoria</span>
+                    <h2 data-i18n="tray.titulo">Experiencia y <span class="gradient-text">formación</span>.</h2>
+                </header>
 
-                <article class="job-card">
-                    <h3>Ingeniería en Informática</h3>
-                    <p class="period">Universidad del Salvador, 2023 - En Curso</p>
-                </article>
+                <div class="journey">
+                    <div class="timeline">
+                        <h3 class="timeline__title reveal"><svg class="icon"><use href="#i-briefcase" /></svg><span data-i18n="tray.experiencia">Experiencia</span></h3>
 
-                <article class="job-card">
-                    <h3>Ciberseguridad de Google</h3>
-                    <p class="period">Coursera, Agosto 2024 - Marzo 2025 - <a
-                            href="https://www.coursera.org/account/accomplishments/professional-cert/H0Z1G3L4NRIW" target="_blank">Certificado</a>
-                    </p>
-                </article>
+                        <article class="tl-item spot reveal">
+                            <span class="tl-item__date mono" data-i18n="exp.ctrl.fecha">Mayo 2026 — Actualidad</span>
+                            <h4 data-i18n="exp.ctrl.rol">Cofundador &amp; Desarrollador Full Stack</h4>
+                            <p class="tl-item__org"><a href="https://ctrl-ia.com.ar" target="_blank" rel="noopener">CTRL-IA <svg class="icon icon--xs"><use href="#i-external" /></svg></a></p>
+                            <ul>
+                                <li data-i18n="exp.ctrl.1">Gestión integral del ciclo de vida de software a medida, desde el relevamiento de necesidades hasta la entrega técnica y comercial.</li>
+                                <li data-i18n="exp.ctrl.2">Desarrollo full stack y despliegue de soluciones web (sitios, sistemas de reservas).</li>
+                                <li data-i18n="exp.ctrl.3">Primer cliente en producción: la web, carta digital y panel de gestión del restaurante <strong>Perci</strong>.</li>
+                            </ul>
+                            <ul class="tags">
+                                <li>React.js</li><li>Next.js</li><li>Node.js</li><li>Supabase</li><li>Cloudflare</li>
+                            </ul>
+                        </article>
 
-                <article class="job-card" data-modal="modal-fullstack">
-                    <h3>Desarrollo Full Stack</h3>
-                    <p class="period">Coderhouse, Octubre 2025 - En Curso - <a id="click-fullstack" class="click-mas">Click para ver más.</a></p> 
-                </article>
+                        <article class="tl-item spot reveal">
+                            <span class="tl-item__date mono" data-i18n="exp.hw.fecha">2022 — Actualidad</span>
+                            <h4 data-i18n="exp.hw.rol">Técnico en Hardware</h4>
+                            <p class="tl-item__org" data-i18n="exp.hw.org">Freelance · Independiente</p>
+                            <ul>
+                                <li data-i18n="exp.hw.1">Ensamblaje, mantenimiento y diagnóstico de fallas de hardware y software (Windows/Linux) para usuarios finales.</li>
+                                <li data-i18n="exp.hw.2">Asesoramiento en seguridad informática, buenas prácticas y configuración de redes básicas.</li>
+                            </ul>
+                        </article>
+                    </div>
 
-            </section>
-        </div>
+                    <div class="timeline">
+                        <h3 class="timeline__title reveal"><svg class="icon"><use href="#i-cap" /></svg><span data-i18n="tray.formacion">Formación</span></h3>
 
+                        <article class="tl-item spot reveal">
+                            <span class="tl-item__date mono" data-i18n="edu.usal.fecha">2023 — 2027 · cursando 4to año</span>
+                            <h4 data-i18n="edu.usal.titulo">Ingeniería en Informática</h4>
+                            <p class="tl-item__org">Universidad del Salvador (USAL) · Pilar</p>
+                        </article>
+
+                        <article class="tl-item spot reveal">
+                            <span class="tl-item__date mono" data-i18n="edu.coder.fecha">Septiembre 2025 — Actualidad</span>
+                            <h4 data-i18n="edu.coder.titulo">Desarrollo Full Stack</h4>
+                            <p class="tl-item__org">CoderHouse</p>
+                            <div class="roadmap">
+                                <div class="roadmap__bar"><span style="--progreso: 75%"></span></div>
+                                <ol class="roadmap__steps">
+                                    <li class="done" data-i18n="edu.coder.m1">Desarrollo Web</li>
+                                    <li class="done">JavaScript</li>
+                                    <li class="done">React.js</li>
+                                    <li class="done" data-i18n="edu.coder.m4">Backend I · Desarrollo avanzado</li>
+                                    <li class="current" data-i18n="edu.coder.m5">Backend II · Diseño y arquitectura</li>
+                                    <li data-i18n="edu.coder.m6">Backend III · Testing y escalabilidad</li>
+                                </ol>
+                            </div>
+                        </article>
+
+                        <article class="tl-item spot reveal">
+                            <span class="tl-item__date mono" data-i18n="edu.google.fecha">Agosto 2024 — Abril 2025</span>
+                            <h4 data-i18n="edu.google.titulo">Certificado Profesional de Ciberseguridad</h4>
+                            <p class="tl-item__org">Google · Coursera · <a href="https://www.coursera.org/account/accomplishments/professional-cert/H0Z1G3L4NRIW" target="_blank" rel="noopener"><span data-i18n="edu.google.ver">Ver certificado</span> <svg class="icon icon--xs"><use href="#i-external" /></svg></a></p>
+                        </article>
+
+                        <article class="tl-item spot reveal">
+                            <span class="tl-item__date mono" data-i18n="edu.ingles.fecha">Certificado</span>
+                            <h4 data-i18n="edu.ingles.titulo">Inglés B2</h4>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="section" id="contacto">
+            <div class="container">
+                <div class="contact spot reveal">
+                    <span class="eyebrow mono" data-i18n="contacto.eyebrow">05 / Contacto</span>
+                    <h2 data-i18n="contacto.titulo">¿Tenés un proyecto o una búsqueda abierta? <span class="gradient-text">Hablemos.</span></h2>
+                    <p class="section__lead" data-i18n="contacto.lead">Respondo rápido. Escribime por el canal que te quede más cómodo.</p>
+
+                    <button class="contact__email mono" id="copiar-email" type="button">
+                        <span>nicolascosta15112004@gmail.com</span>
+                        <svg class="icon"><use href="#i-copy" /></svg>
+                    </button>
+
+                    <div class="contact__links">
+                        <a class="btn btn--primary" href="https://wa.me/5491127770315" target="_blank" rel="noopener"><svg class="icon"><use href="#i-whatsapp" /></svg>WhatsApp</a>
+                        <a class="btn btn--ghost" href="https://www.linkedin.com/in/nicolas-costa-554612308/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin" /></svg>LinkedIn</a>
+                        <a class="btn btn--ghost" href="https://github.com/IngNicolasCosta" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github" /></svg>GitHub</a>
+                        <a class="btn btn--ghost js-cv" href="assets/docs/nicolas_costa_cv.pdf" download="Nicolas_Costa_CV.pdf"><svg class="icon"><use href="#i-download" /></svg><span data-i18n="contacto.cv">Descargar CV</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Nicolás Costa. Portafolio creado con HTML, CSS y JS.</p>
+        <div class="container footer__inner">
+            <p>&copy; <span id="anio">2026</span> Nicolás Costa · <span data-i18n="footer.hecho">Diseñado y desarrollado con HTML, CSS y JavaScript.</span></p>
+            <a href="#inicio" class="mono" data-i18n="footer.arriba">volver arriba ↑</a>
+        </div>
     </footer>
-    <!-- MODAL SECTIONS -->
-    <div id="modal-about" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Detalles Adicionales - Acerca de Mí</h3>
-            <p>Soy un estudiante de 4to año de Ingeniería en Informática, lo que me proporciona una base
-                teórica sólida. </p>
-            <p>Mi *Certificado de Ciberseguridad de Google* me ha equipado con conocimientos de seguridad en redes,
-                sistemas operativos y gestión de riesgos.</p>
-            <p>Actualmente estoy mas interesado por el desarrollo de páginas web o aplicaciones, es por eso que estoy
-                realizando un curso de desarrollo web full stack. Estoy listo para
-                aplicar mis conocimientos en un entorno profesional, aportando entusiasmo y una fuerte ética de trabajo.
-            </p>
 
-            <p><strong>Objetivo:</strong> Seguir aprendiendo a la hora de hacer proyectos o trabajar para empresas.</p>
-        </div>
-    </div>
-
-
-    <div id="modal-skills-prog" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Programación</h3>
-            <ul>
-                <li><strong>Python🐍</strong> Conocimiento básico en sintaxis y estructuras fundamentales.</li>
-                <li><strong>Java☕</strong> Nivel intermedio en desarrollo de aplicaciones.</li>
-                <li><strong>C/C#</strong> Conocimiento básico en sintaxis y fundamentos de programación.</li>
-                <li><strong>HTML🌐</strong> Dominio avanzado en la estructuración de contenido web (Estudiando
-                    Desarrollo Full Stack).
-                </li>
-                <li><strong>CSS✨</strong> Dominio avanzado en el diseño y presentación visual (Estudiando Desarrollo
-                    Full Stack).</li>
-                <li><strong>JavaScript🚀</strong> Dominio avanzado y en expansión (Estudiando Desarrollo Full Stack).
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div id="modal-skills-bd" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Bases de Datos y Estructura de la Información</h3>
-            <ul>
-                <li><strong>SQL💾</strong> Conocimiento básico a intermedio en consultas, manipulación y gestión de
-                    bases de datos relacionales.</li>
-                <li><strong>EXCEL📊</strong> Nivel intermedio a avanzado en análisis de datos, tablas dinámicas y
-                    reportería.</li>
-                <li><strong>XML🏷️</strong> Conocimiento básico a intermedio en la estructuración e intercambio de
-                    datos.</li>
-            </ul>
-        </div>
-    </div>
-    <div id="modal-skills-so" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Sistemas Operativos</h3>
-            <ul>
-                <li><strong>Windows🖥️</strong> Nivel avanzado por uso diario y dominio de sus funcionalidades.</li>
-                <li><strong>Linux🐧</strong>Nivel intermedio en comandos y gestión básica del sistema operativo.</li>
-            </ul>
-        </div>
-    </div>
-    <div id="modal-skills-hw" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Hardware y Ensamblado</h3>
-            <ul>
-                <li><strong>Montaje y Mantenimiento de PC🛠️</strong> Nivel avanzado en ensamblaje de PC desde cero,
-                    reemplazo de componentes (GPU, RAM, refrigeración) y modificaciones en laptops (ej. baterías).</li>
-                <li><strong>Configuración de BIOS/UEFI y RAID⚙️</strong> Dominio en la configuración y optimización de
-                    BIOS/UEFI, incluyendo la gestión e implementación de arreglos RAID.</li>
-            </ul>
-        </div>
-    </div>
-    <div id="modal-proyecto-dinamico" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            
-            <h3 id="modal-titulo">Título del Proyecto</h3>
-            
-            <p class="modal-descripcion-larga"></p>
-            
-            <p class="tech-stack"><strong>Tecnologías:</strong> <span></span></p>
-            
-            <a href="#" target="_blank" class="contact-button btn-proyecto-link">
-                <span>Ver Pagina Web</span>
-            </a>
-            <a href="#" target="_blank" class="contact-button btn-proyecto-link2">
-                <span>Ver Repositorio</span>
-            </a>
-
-            <div class="project-img" style="display: none; margin-top: 20px;">
-                <div class="carousel-container" id="modalCarousel">
-                    <div class="carousel-track" id="modal-track-fotos">
-                        </div>
-                </div>
-                <div class="carousel-nav-buttons">
-                    <button class="nav-btn prev-btn" data-carousel="modalCarousel">❮</button>
-                    <button class="nav-btn next-btn" data-carousel="modalCarousel">❯</button>
-                </div>
+    <!-- MODAL DE PROYECTO (se rellena desde JS) -->
+    <div class="modal" id="modal-proyecto" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+        <div class="modal__backdrop" data-cerrar></div>
+        <div class="modal__panel">
+            <button class="modal__close" type="button" data-cerrar aria-label="Cerrar"><svg class="icon"><use href="#i-close" /></svg></button>
+            <div class="gallery" id="galeria"></div>
+            <div class="modal__body">
+                <div class="modal__meta" id="modal-meta"></div>
+                <h3 id="modal-titulo"></h3>
+                <div class="modal__desc" id="modal-desc"></div>
+                <ul class="tags" id="modal-tags"></ul>
+                <div class="modal__actions" id="modal-acciones"></div>
             </div>
         </div>
-    </div> 
-    <div id="modal-fullstack" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 style="color: #003050;">Desarrollo Full Stack</h2>
-            <article class="job-card">
-                <h3>Desarrollo Web</h3>
-                <p class="period">Octubre 2025 - Febrero 2026 - Finalizado</p>
-            </article>
-            <article class="job-card">
-                <h3>JavaScript</h3>
-                <p class="period">Enero 2026 - Marzo 2026 - Finalizado</p>
-            </article>
-            <article class="job-card">
-                <h3>React Js</h3>
-                <p class="period">Abril 2026 - Mayo 2026 - En Curso</p>
-            </article>
-            <article class="job-card">
-                <h3>Desarrollo Avanzado de Backend</h3>
-                <p class="period">Inicia Junio 2026</p>
-            </article>
-            <article class="job-card">
-                <h3>Diseño y Arquitectura Backend</h3>
-                <p class="period">Inicia Agosto 2026</p>
-            </article>
-            <article class="job-card">
-                <h3>Testing y Escalabilidad</h3>
-                <p class="period">Inicia Noviembre 2026</p>
-            </article>
-        </div>
-    </div>
-    <div id="modal-lightbox" class="modal lightbox">
-        <span class="close-lightbox">&times;</span>
-        <button class="nav-btn prev-btn" onclick="changeLightboxSlide(-1)">❮</button>
-        <img id="lightbox-img" src="" alt="Imagen ampliada">
-        <button class="nav-btn next-btn" onclick="changeLightboxSlide(1)">❯</button>
     </div>
 
-    <script src="js/script.js?v=1.3"></script>
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" hidden>
+        <button class="lightbox__close" type="button" data-cerrar-lb aria-label="Cerrar"><svg class="icon"><use href="#i-close" /></svg></button>
+        <button class="lightbox__nav lightbox__nav--prev" type="button" data-lb="-1" aria-label="Anterior"><svg class="icon"><use href="#i-chevron" /></svg></button>
+        <img id="lightbox-img" alt="">
+        <button class="lightbox__nav" type="button" data-lb="1" aria-label="Siguiente"><svg class="icon"><use href="#i-chevron" /></svg></button>
+        <span class="lightbox__count mono" id="lightbox-count"></span>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="js/i18n.js?v=2.0"></script>
+    <script src="js/script.js?v=2.0"></script>
 </body>
 
 </html>
