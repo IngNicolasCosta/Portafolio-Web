@@ -1,59 +1,180 @@
 [
     {
-        "id": "modal-AppPsico",
-        "titulo": "App para Psicologos (En desarrollo)",
-        "resumen": "Estoy desarrollando una plataforma web para la gestión eficiente de pacientes, turnos, historiales . . .",
-        "descripcion_larga": "Estoy desarrollando una plataforma web para la gestión eficiente de pacientes, turnos, historiales y notas de sesión, optimizando la carga administrativa de profesionales de la salud mental.",
-        "tecnologias": "HTML5, CSS3, JavaScript, Python, SQL",
-        "imagenes": []
+        "id": "perci",
+        "categoria": "clientes",
+        "estado": "produccion",
+        "carpeta": "perci",
+        "imagenes": ["perci-1.webp", "perci-2.webp", "perci-3.webp", "perci-4.webp", "perci-5.webp", "perci-6.webp", "perci-7.webp", "perci-8.webp"],
+        "tecnologias": ["Node.js", "PostgreSQL (Neon)", "JavaScript", "HTML", "CSS", "Vercel", "Google Sign-In"],
+        "demo": "https://www.perci.com.ar/",
+        "repo": "",
+        "es": {
+            "titulo": "Perci · Restaurante",
+            "resumen": "Web y carta digital para los dos locales de Perci, con pedidos por WhatsApp y panel de gestión propio.",
+            "descripcion": "Primer proyecto comercial de <b>CTRL-IA</b>, hecho para un cliente real: la web y la <b>carta digital</b> de los dos locales del restaurante <b>Perci</b>, con <b>pedidos por WhatsApp</b>.<br><br>Incluye un <b>panel de administración propio</b> para que el negocio edite precios, fotos y platos, vea la <b>comanda en vivo</b> y mida sus ventas, con acceso mediante <b>Google Sign-In</b>. Backend en <b>Node.js</b> con <b>PostgreSQL (Neon)</b>, desplegado en <b>Vercel</b>. Trabajamos todo el ciclo: relevamiento con el cliente, diseño, desarrollo y puesta en producción."
+        },
+        "en": {
+            "titulo": "Perci · Restaurant",
+            "resumen": "Website and digital menu for Perci's two locations, with WhatsApp ordering and a custom admin panel.",
+            "descripcion": "<b>CTRL-IA</b>'s first commercial project, built for a real client: the website and <b>digital menu</b> for both locations of <b>Perci</b> restaurant, with <b>WhatsApp ordering</b>.<br><br>It includes a <b>custom admin panel</b> where the business edits prices, photos and dishes, follows <b>incoming orders live</b> and tracks sales, with <b>Google Sign-In</b> access. <b>Node.js</b> backend with <b>PostgreSQL (Neon)</b>, deployed on <b>Vercel</b>. We handled the full cycle: client discovery, design, development and launch."
+        }
     },
     {
-        "id": "modal-portafolio",
-        "titulo": "Portafolio Personal (Este Sitio)",
-        "resumen": "Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend fundamentales . . .",
-        "descripcion_larga": "Una aplicación web diseñada para demostrar mi progreso y dominio de las tecnologías frontend fundamentales. Aunque inicialmente se desarrolló con HTML5, CSS3 y JavaScript, está concebido como un proyecto evolutivo. Actualmente, es la base para futuras integraciones de frameworks y ampliaciones a habilidades Full Stack, reflejando mi aprendizaje continuo.",
-        "tecnologias": "HTML5, CSS3, JavaScript, Json",
-        "link2": "https://github.com/IngNicolasCosta/Portafolio-Web",
-        "imagenes": [
-            "assets/imagenes/projects/portafolio/portafolio-inicio.png",
-            "assets/imagenes/projects/portafolio/portafolio-ingles.png",
-            "assets/imagenes/projects/portafolio/portafolio-modal.png",
-            "assets/imagenes/projects/portafolio/portafolio-proyecto.png"
-        ]
+        "id": "cauce",
+        "categoria": "productos",
+        "estado": "produccion",
+        "carpeta": "cauce",
+        "imagenes": ["cauce-1.webp", "cauce-2.webp", "cauce-3.webp", "cauce-4.webp", "cauce-5.webp", "cauce-6.webp", "cauce-7.webp"],
+        "tecnologias": ["React", "Vite", "Supabase", "Tailwind CSS", "Google OAuth", "Row Level Security", "IndexedDB"],
+        "demo": "https://cauce.ctrl-ia.com.ar/",
+        "repo": "",
+        "es": {
+            "titulo": "Cauce · Finanzas personales",
+            "resumen": "App web de finanzas personales offline-first, en producción y en constante evolución.",
+            "descripcion": "Aplicación de finanzas personales con arquitectura <b>offline-first</b>, en producción. Cada iteración suma una pieza más al control de las finanzas del día a día: movimientos, presupuestos, objetivos de ahorro y más.<br><br>Hecha con <b>React + Vite</b> y <b>Supabase (PostgreSQL)</b>: autenticación con <b>Google OAuth</b>, <b>Row Level Security</b> para que cada usuario acceda solo a sus datos e <b>IndexedDB</b> para persistencia local, así la app sigue funcionando sin conexión."
+        },
+        "en": {
+            "titulo": "Cauce · Personal finance",
+            "resumen": "Offline-first personal finance web app, in production and constantly evolving.",
+            "descripcion": "Personal finance app with an <b>offline-first</b> architecture, in production. Every iteration adds another piece to day-to-day money management: transactions, budgets, savings goals and more.<br><br>Built with <b>React + Vite</b> and <b>Supabase (PostgreSQL)</b>: <b>Google OAuth</b> authentication, <b>Row Level Security</b> so each user can only access their own data, and <b>IndexedDB</b> for local persistence, so the app keeps working offline."
+        }
     },
     {
-        "id": "modal-commerce",
-        "titulo": "Apple Shine - E-commerce Simulation",
-        "resumen": "Desarrollo de un sitio web multipágina para una empresa (ficticia), simulando un entorno profesional. Demostrando . . .",
-        "descripcion_larga": "Este proyecto fue desarrollado como entrega final para el curso de <b>Desarrollo Web de CoderHouse</b>, con el objetivo de simular un entorno real de comercio electrónico para una marca ficticia de pulido de frutas. La plataforma cuenta con una arquitectura <b>multi-página</b> que organiza servicios, productos y un área interactiva de clientes. Implementa un diseño <b>fully responsive</b> que garantiza una navegación fluida en cualquier dispositivo, junto con un carrito de compras dinámico y funcional que utiliza <b>LocalStorage</b> para la persistencia de datos. Además, integra un sistema de reseñas en tiempo real con validación visual, destacando un fuerte enfoque en la experiencia del usuario (UX) y la prolijidad técnica en el front-end.",
-        "tecnologias": "HTML5, CSS3, SASS, JavaScript, Bootstrap 5, LocalStorage",
-        "link": "https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/",
-        "link2": "https://github.com/IngNicolasCosta/Proyecto-Final-CoderHouse",
-        "imagenes": [
-            "assets/imagenes/projects/ecommerce/ecommerce-inicio.png",
-            "assets/imagenes/projects/ecommerce/ecommerce-historia.png",
-            "assets/imagenes/projects/ecommerce/ecommerce-servicios.png",
-            "assets/imagenes/projects/ecommerce/ecommerce-producto.png",
-            "assets/imagenes/projects/ecommerce/ecommerce-contacto.png",
-            "assets/imagenes/projects/ecommerce/ecommerce-opiniones.png",
-            "assets/imagenes/projects/ecommerce/ecommerce-carrito.png"
-        ]
+        "id": "psico",
+        "categoria": "productos",
+        "estado": "desarrollo",
+        "carpeta": "psico",
+        "portada": "Psicología",
+        "imagenes": [],
+        "tecnologias": [],
+        "demo": "",
+        "repo": "",
+        "es": {
+            "titulo": "Sistema de gestión para consultorios de psicología",
+            "resumen": "Plataforma integral y administrativa para profesionales de la salud mental: pacientes, turnos e historias clínicas.",
+            "descripcion": "Desarrollo integral de un sistema de gestión para consultorios de psicología: pacientes, turnos, historiales y notas de sesión, para reducir la carga administrativa de los profesionales. El proyecto abarca desde el <b>estudio de prefactibilidad</b> y la <b>presentación comercial</b> hasta el <b>diseño de la base de datos</b> y la programación de la plataforma."
+        },
+        "en": {
+            "titulo": "Practice management system for psychologists",
+            "resumen": "All-in-one administrative platform for mental health professionals: patients, appointments and clinical records.",
+            "descripcion": "End-to-end development of a practice management system for psychologists: patients, appointments, records and session notes, reducing the administrative workload for professionals. The project spans from the <b>pre-feasibility study</b> and <b>business pitch</b> to the <b>database design</b> and the development of the platform."
+        }
     },
     {
-        "id": "modal-corralen",
-        "titulo": "Corralón \"El Ingeniero\" - Simulador de Presupuestos",
-        "resumen": "Proyecto realizado para crear un simulador de presupuestos para un corralon de materiales de construccion . . .",
-        "descripcion_larga": "Este proyecto fue desarrollado como entrega final para el curso de JavaScript en CoderHouse, con el objetivo de resolver la complejidad en la cotización de materiales de construcción mediante un simulador dinámico y eficiente. A diferencia de un e-commerce estático, esta plataforma utiliza una arquitectura basada en datos asíncronos (Fetch API) que consume un catálogo desde un archivo JSON local, permitiendo actualizaciones de stock sin modificar el código fuente.<br><br>El sistema implementa una lógica de negocio robusta que incluye el cálculo automático de impuestos (IVA), subtotales y totales en tiempo real, con una gestión de estado del carrito que utiliza LocalStorage para garantizar la persistencia de los datos. Se destaca por su interactividad avanzada, integrando filtros dinámicos por categorías, controles de cantidad inteligentes y una experiencia de usuario (UX) pulida mediante el uso de la librería SweetAlert2 para validaciones y feedbacks visuales. Todo bajo un diseño fully responsive orientado a la claridad técnica y la eficiencia operativa en el sector de la construcción.",
-        "tecnologias": "HTML5, CSS3, JavaScript, LocalStorage, Fetch API, SweetAlert2, Json",
-        "link": "https://ingnicolascosta.github.io/ProyectoFinal-Costa/",
-        "link2": "https://github.com/IngNicolasCosta/ProyectoFinal-Costa",
+        "id": "petcare",
+        "categoria": "productos",
+        "estado": "pausa",
+        "formato": "movil",
+        "carpeta": "petcare",
+        "imagenes": ["petcare-1.webp", "petcare-2.webp", "petcare-3.webp", "petcare-4.webp", "petcare-5.webp", "petcare-6.webp"],
+        "tecnologias": ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Google Sign-In"],
+        "demo": "https://petcare.ctrl-ia.com.ar/",
+        "repo": "",
+        "es": {
+            "titulo": "PetCare Family",
+            "resumen": "App web para el cuidado integral de las mascotas de toda la familia: alimentación, salud, turnos y stock de comida.",
+            "descripcion": "Aplicación para coordinar entre toda la familia el cuidado de las mascotas: <b>vacunas y salud</b>, <b>alimentación</b>, <b>calendario</b> de veterinario y peluquería, y una <b>bitácora</b> con el historial de eventos del hogar. Incluye un <b>inventario de alimento</b> que proyecta cuántos días de stock quedan, y está pensada mobile-first para usarse desde el celular.<br><br>La desarrollé para uso familiar y para aprender <b>React + TypeScript</b> con backend en <b>Node.js</b> y <b>PostgreSQL</b>. Está terminada y actualmente <b>en pausa</b>: se puede ver, pero el inicio de sesión está desactivado."
+        },
+        "en": {
+            "titulo": "PetCare Family",
+            "resumen": "Web app to manage pet care across the whole family: feeding, health, appointments and food stock.",
+            "descripcion": "An app for the whole family to coordinate pet care: <b>vaccines and health</b>, <b>feeding</b>, a <b>calendar</b> for vet and grooming appointments, and a <b>log</b> with the household's event history. It includes a <b>food inventory</b> that projects how many days of stock are left, and it's designed mobile-first.<br><br>I built it for family use and to learn <b>React + TypeScript</b> with a <b>Node.js</b> and <b>PostgreSQL</b> backend. It's finished and currently <b>on hold</b>: you can browse it, but sign-in is disabled."
+        }
+    },
+    {
+        "id": "wikey",
+        "categoria": "personales",
+        "estado": "desarrollo",
+        "carpeta": "wikey",
+        "imagenes": ["wikey-3.webp", "wikey-1.webp", "wikey-2.webp", "wikey-4.webp", "wikey-5.webp"],
+        "tecnologias": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Cloudflare"],
+        "demo": "https://wikey.ctrl-ia.com.ar/",
+        "repo": "",
+        "es": {
+            "titulo": "Wikey · Wiki de videojuegos",
+            "resumen": "Mi propia wiki de consulta rápida sobre los videojuegos que juego: guías, datos y referencias en un solo lugar.",
+            "descripcion": "<b>Wi</b>ki + <b>Key</b> (de tecla, como el Ctrl de CTRL-IA): una wiki propia nacida de mi pasión por los videojuegos, para consultar guías, datos y referencias rápido y en un solo lugar.<br><br>Hoy tiene una sección completa de <b>No Man's Sky</b> (materiales, construcción, recetas del refinador y detalle de cada ítem) y próximamente suma <b>Minecraft técnico</b>, con el catálogo de granjas y una sección de <b>Redstone</b>. Hecha con <b>Next.js</b>, <b>TypeScript</b>, <b>Tailwind CSS</b> y <b>Framer Motion</b>, desplegada en <b>Cloudflare</b>."
+        },
+        "en": {
+            "titulo": "Wikey · Video game wiki",
+            "resumen": "My own quick-reference wiki for the games I play: guides, data and references in one place.",
+            "descripcion": "<b>Wi</b>ki + <b>Key</b> (as in keyboard key, like the Ctrl in CTRL-IA): my own wiki born from my passion for video games, to look up guides, data and references quickly and in one place.<br><br>It currently has a full <b>No Man's Sky</b> section (materials, building parts, refiner recipes and item details), and <b>technical Minecraft</b> is coming next, with a farm catalog and a <b>Redstone</b> section. Built with <b>Next.js</b>, <b>TypeScript</b>, <b>Tailwind CSS</b> and <b>Framer Motion</b>, deployed on <b>Cloudflare</b>."
+        }
+    },
+    {
+        "id": "corralon",
+        "categoria": "academicos",
+        "estado": "finalizado",
+        "carpeta": "corralon",
         "imagenes": [
-            "assets/imagenes/projects/corralon/corralon-inicio.png",
-            "assets/imagenes/projects/corralon/corralon-notificacion.png",
-            "assets/imagenes/projects/corralon/corralon-categoria1.png",
-            "assets/imagenes/projects/corralon/corralon-categoria2.png",
-            "assets/imagenes/projects/corralon/corralon-categoria3.png",
-            "assets/imagenes/projects/corralon/corralon-alerta.png"
-        ]
+            "corralon-inicio.png",
+            "corralon-notificacion.png",
+            "corralon-categoria1.png",
+            "corralon-categoria2.png",
+            "corralon-categoria3.png",
+            "corralon-alerta.png"
+        ],
+        "tecnologias": ["JavaScript", "Fetch API", "LocalStorage", "SweetAlert2", "JSON", "HTML5", "CSS3"],
+        "demo": "https://ingnicolascosta.github.io/ProyectoFinal-Costa/",
+        "repo": "https://github.com/IngNicolasCosta/ProyectoFinal-Costa",
+        "es": {
+            "titulo": "Corralón \"El Ingeniero\"",
+            "resumen": "Tienda y simulador de presupuestos para un corralón de materiales, con catálogo asíncrono y carrito persistente.",
+            "descripcion": "Entrega final del curso de <b>JavaScript de CoderHouse</b>. Resuelve la complejidad de cotizar materiales de construcción con un simulador dinámico. Consume el catálogo desde un JSON mediante <b>Fetch API</b>, así el stock se actualiza sin tocar el código.<br><br>Incluye cálculo automático de IVA, subtotales y totales en tiempo real, un carrito persistente con <b>LocalStorage</b>, filtros por categoría, controles de cantidad y feedback visual con <b>SweetAlert2</b>. Todo con diseño fully responsive."
+        },
+        "en": {
+            "titulo": "Corralón \"El Ingeniero\"",
+            "resumen": "Store and quote simulator for a building-materials yard, with an async catalog and persistent cart.",
+            "descripcion": "Final project for the <b>CoderHouse JavaScript course</b>. It tackles the complexity of quoting construction materials with a dynamic simulator. The catalog is consumed from a JSON file via the <b>Fetch API</b>, so stock can be updated without touching the code.<br><br>It features automatic VAT, subtotal and total calculation in real time, a cart persisted with <b>LocalStorage</b>, category filters, quantity controls and visual feedback with <b>SweetAlert2</b>. Fully responsive."
+        }
+    },
+    {
+        "id": "apple-shine",
+        "categoria": "academicos",
+        "estado": "finalizado",
+        "carpeta": "ecommerce",
+        "imagenes": [
+            "ecommerce-inicio.png",
+            "ecommerce-historia.png",
+            "ecommerce-servicios.png",
+            "ecommerce-producto.png",
+            "ecommerce-contacto.png",
+            "ecommerce-opiniones.png",
+            "ecommerce-carrito.png"
+        ],
+        "tecnologias": ["HTML5", "SASS", "JavaScript", "Bootstrap 5", "LocalStorage"],
+        "demo": "https://ingnicolascosta.github.io/Proyecto-Final-CoderHouse/",
+        "repo": "https://github.com/IngNicolasCosta/Proyecto-Final-CoderHouse",
+        "es": {
+            "titulo": "Apple Shine · E-commerce",
+            "resumen": "E-commerce multipágina para una marca ficticia, con carrito dinámico y sistema de reseñas.",
+            "descripcion": "Entrega final del curso de <b>Desarrollo Web de CoderHouse</b>: simula un comercio electrónico real para una marca ficticia de pulido de frutas. Arquitectura <b>multipágina</b> con servicios, productos y un área interactiva de clientes.<br><br>Diseño <b>fully responsive</b>, carrito de compras funcional con persistencia en <b>LocalStorage</b> y sistema de reseñas en tiempo real con validación visual, con foco en la experiencia de usuario."
+        },
+        "en": {
+            "titulo": "Apple Shine · E-commerce",
+            "resumen": "Multi-page e-commerce for a fictional brand, with a dynamic cart and review system.",
+            "descripcion": "Final project for the <b>CoderHouse Web Development course</b>: it simulates a real online store for a fictional fruit-polishing brand. <b>Multi-page</b> architecture with services, products and an interactive customer area.<br><br><b>Fully responsive</b> design, a working shopping cart persisted in <b>LocalStorage</b> and a real-time review system with visual validation, focused on user experience."
+        }
+    },
+    {
+        "id": "portafolio",
+        "categoria": "personales",
+        "estado": "produccion",
+        "carpeta": "portafolio",
+        "portada": "Portfolio",
+        "imagenes": [],
+        "tecnologias": ["HTML5", "CSS3", "JavaScript", "JSON"],
+        "demo": "",
+        "repo": "https://github.com/IngNicolasCosta/Portafolio-Web",
+        "es": {
+            "titulo": "Este portfolio",
+            "resumen": "Sitio data-driven en JavaScript vanilla: los proyectos se cargan desde JSON y el idioma cambia sin recargar.",
+            "descripcion": "El sitio que estás viendo. Hecho con <b>HTML, CSS y JavaScript vanilla</b>, sin frameworks: los proyectos se generan a partir de un archivo <b>JSON</b>, el contenido es bilingüe (ES/EN) sin recargar la página y las animaciones respetan la preferencia de movimiento reducido del sistema."
+        },
+        "en": {
+            "titulo": "This portfolio",
+            "resumen": "Data-driven site in vanilla JavaScript: projects load from JSON and the language switches without reloading.",
+            "descripcion": "The site you're looking at. Built with <b>vanilla HTML, CSS and JavaScript</b>, no frameworks: projects are generated from a <b>JSON</b> file, content is bilingual (ES/EN) without reloading, and animations respect the system's reduced-motion setting."
+        }
     }
 ]
