@@ -116,6 +116,10 @@ ol {
     flex-shrink: 0;
 }
 
+.icon-sprite {
+    position: absolute;
+}
+
 .icon--xs {
     width: 13px;
     height: 13px;
@@ -1409,7 +1413,7 @@ html[lang="en"] .lang-toggle [data-lang="en"] {
 .roadmap__bar span {
     display: block;
     height: 100%;
-    width: var(--progreso);
+    width: var(--progreso, 0%);
     background: var(--grad);
     border-radius: inherit;
 }

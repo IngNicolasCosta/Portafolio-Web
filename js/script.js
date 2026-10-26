@@ -159,6 +159,31 @@ async function cargarProyectos() {
 }
 
 const rutaImagen = (proy, archivo) => `${RUTA_IMAGENES}${proy.carpeta}/${archivo}`;
+
+// Solo links http(s): evita que un "javascript:..." en el JSON termine en un href
+const urlSegura = url => /^https?:\/\//i.test(url || '') ? escapar(url) : '';
+
+// La descripción del JSON admite formato simple. Se parsea en un <template> (inerte: no ejecuta
+// scripts ni eventos) y se dejan solo estas etiquetas, sin atributos; el resto queda como texto.
+const ETIQUETAS_PERMITIDAS = ['B', 'STRONG', 'EM', 'I', 'BR'];
+
+function htmlPermitido(html = '') {
+    const plantilla = document.createElement('template');
+    plantilla.innerHTML = html;
+    const limpiar = nodo => {
+        Array.from(nodo.childNodes).forEach(hijo => {
+            if (hijo.nodeType !== Node.ELEMENT_NODE) return;
+            if (ETIQUETAS_PERMITIDAS.includes(hijo.tagName)) {
+                Array.from(hijo.attributes).forEach(a => hijo.removeAttribute(a.name));
+                limpiar(hijo);
+            } else {
+                hijo.replaceWith(document.createTextNode(hijo.textContent));
+            }
+        });
+    };
+    limpiar(plantilla.content);
+    return plantilla.innerHTML;
+}
 const texto = proy => proy[idioma] || proy.es;
 
 // Texto grande de la portada generada: el campo "portada" del JSON o lo que va antes del "·" en el título
@@ -178,7 +203,7 @@ function badges(proy) {
     const t = ui();
     return `
         <span class="badge badge--cat">${escapar(t.categorias[proy.categoria] || proy.categoria)}</span>
-        ${proy.estado ? `<span class="badge badge--estado badge--${proy.estado}">${escapar(t.estados[proy.estado] || proy.estado)}</span>` : ''}`;
+        ${proy.estado ? `<span class="badge badge--estado badge--${escapar(proy.estado)}">${escapar(t.estados[proy.estado] || proy.estado)}</span>` : ''}`;
 }
 
 function renderFiltros() {
@@ -201,16 +226,18 @@ function renderProyectos() {
     grilla.innerHTML = proyectos.map((proy, i) => {
         const txt = texto(proy);
         const tieneFotos = proy.imagenes && proy.imagenes.length > 0;
-        const img = tieneFotos ? `<img src="${rutaImagen(proy, proy.imagenes[0])}" alt="${escapar(txt.titulo)}" loading="lazy">` : '';
+        const img = tieneFotos ? `<img src="${escapar(rutaImagen(proy, proy.imagenes[0]))}" alt="${escapar(txt.titulo)}" loading="lazy">` : '';
         // Capturas verticales (apps mobile): se muestran como un teléfono sobre la portada degradada
         const media = !tieneFotos ? portada(proy)
             : proy.formato === 'movil' ? `<div class="cover cover--movil">${img}</div>`
             : img;
         const oculto = filtroActivo !== 'todos' && proy.categoria !== filtroActivo;
+        const demo = urlSegura(proy.demo);
+        const repo = urlSegura(proy.repo);
 
         return `
-            <article class="project-card spot reveal${oculto ? ' is-hidden' : ''}" data-cat="${proy.categoria}" style="--delay:${(i % 3) * 0.08}s">
-                <button class="project-card__media" type="button" data-abrir="${proy.id}" data-ver="${escapar(tieneFotos ? t.verCapturas : t.detalles)}" aria-label="${escapar(t.detalles)}: ${escapar(txt.titulo)}">
+            <article class="project-card spot reveal${oculto ? ' is-hidden' : ''}" data-cat="${escapar(proy.categoria)}">
+                <button class="project-card__media" type="button" data-abrir="${escapar(proy.id)}" data-ver="${escapar(tieneFotos ? t.verCapturas : t.detalles)}" aria-label="${escapar(t.detalles)}: ${escapar(txt.titulo)}">
                     ${media}
                 </button>
                 <div class="project-card__body">
@@ -219,14 +246,16 @@ function renderProyectos() {
                     <p>${escapar(txt.resumen)}</p>
                     ${proy.tecnologias?.length ? `<ul class="tags">${proy.tecnologias.map(tec => `<li>${escapar(tec)}</li>`).join('')}</ul>` : ''}
                     <div class="project-card__actions">
-                        <button class="link-btn" type="button" data-abrir="${proy.id}">${escapar(t.detalles)}${icono('arrow')}</button>
-                        ${proy.demo ? `<a class="icon-btn" href="${proy.demo}" target="_blank" rel="noopener" aria-label="${escapar(t.demo)}" title="${escapar(t.demo)}">${icono('external')}</a>` : ''}
-                        ${proy.repo ? `<a class="icon-btn" href="${proy.repo}" target="_blank" rel="noopener" aria-label="${escapar(t.repo)}" title="${escapar(t.repo)}">${icono('github')}</a>` : ''}
+                        <button class="link-btn" type="button" data-abrir="${escapar(proy.id)}">${escapar(t.detalles)}${icono('arrow')}</button>
+                        ${demo ? `<a class="icon-btn" href="${demo}" target="_blank" rel="noopener" aria-label="${escapar(t.demo)}" title="${escapar(t.demo)}">${icono('external')}</a>` : ''}
+                        ${repo ? `<a class="icon-btn" href="${repo}" target="_blank" rel="noopener" aria-label="${escapar(t.repo)}" title="${escapar(t.repo)}">${icono('github')}</a>` : ''}
                     </div>
                 </div>
             </article>`;
     }).join('');
 
+    // Escalonado de la animación de entrada (por CSSOM y no con style="", que la CSP bloquea)
+    $$('.project-card', grilla).forEach((card, i) => card.style.setProperty('--delay', `${(i % 3) * 0.08}s`));
     observarReveals(grilla);
 }
 
@@ -271,11 +300,13 @@ function renderModal() {
     $('.modal__panel').dataset.cat = proy.categoria;
     $('#modal-meta').innerHTML = badges(proy);
     $('#modal-titulo').textContent = txt.titulo;
-    $('#modal-desc').innerHTML = `<p>${txt.descripcion}</p>`;
+    $('#modal-desc').innerHTML = `<p>${htmlPermitido(txt.descripcion)}</p>`;
     $('#modal-tags').innerHTML = (proy.tecnologias || []).map(tec => `<li>${escapar(tec)}</li>`).join('');
+    const demo = urlSegura(proy.demo);
+    const repo = urlSegura(proy.repo);
     $('#modal-acciones').innerHTML = `
-        ${proy.demo ? `<a class="btn btn--primary" href="${proy.demo}" target="_blank" rel="noopener">${escapar(t.demo)}${icono('external')}</a>` : ''}
-        ${proy.repo ? `<a class="btn btn--ghost" href="${proy.repo}" target="_blank" rel="noopener">${icono('github')}${escapar(t.repo)}</a>` : ''}`;
+        ${demo ? `<a class="btn btn--primary" href="${demo}" target="_blank" rel="noopener">${escapar(t.demo)}${icono('external')}</a>` : ''}
+        ${repo ? `<a class="btn btn--ghost" href="${repo}" target="_blank" rel="noopener">${icono('github')}${escapar(t.repo)}</a>` : ''}`;
     renderGaleria();
 }
 
@@ -292,14 +323,14 @@ function renderGaleria() {
     const varias = fotos.length > 1;
     galeria.innerHTML = `
         <div class="gallery__main">
-            <img src="${rutaImagen(proy, fotos[fotoActual])}" alt="${escapar(texto(proy).titulo)} — ${fotoActual + 1}/${fotos.length}" data-zoom>
+            <img src="${escapar(rutaImagen(proy, fotos[fotoActual]))}" alt="${escapar(texto(proy).titulo)} — ${fotoActual + 1}/${fotos.length}" data-zoom>
             ${varias ? `
                 <button class="gallery__nav gallery__nav--prev" type="button" data-foto="-1" aria-label="Anterior">${icono('chevron')}</button>
                 <button class="gallery__nav gallery__nav--next" type="button" data-foto="1" aria-label="Siguiente">${icono('chevron')}</button>` : ''}
         </div>
         ${varias ? `<div class="gallery__thumbs">${fotos.map((f, i) => `
             <button type="button" class="${i === fotoActual ? 'is-active' : ''}" data-ir="${i}" aria-label="${i + 1}/${fotos.length}">
-                <img src="${rutaImagen(proy, f)}" alt="" loading="lazy">
+                <img src="${escapar(rutaImagen(proy, f))}" alt="" loading="lazy">
             </button>`).join('')}</div>` : ''}`;
 
     const activa = $('.gallery__thumbs .is-active', galeria);
@@ -469,9 +500,20 @@ function iniciarEventos() {
     }, { passive: true });
 }
 
+// Barra del curso: se calcula sola con los módulos marcados como "done" y "current" (cuenta medio)
+function calcularProgresoCursos() {
+    $$('.roadmap').forEach(roadmap => {
+        const pasos = $$('.roadmap__steps li', roadmap);
+        const hechos = $$('.roadmap__steps li.done', roadmap).length + $$('.roadmap__steps li.current', roadmap).length * 0.5;
+        const progreso = pasos.length ? Math.round((hechos / pasos.length) * 100) : 0;
+        $('.roadmap__bar span', roadmap).style.setProperty('--progreso', `${progreso}%`);
+    });
+}
+
 // --- INICIO ---
 document.addEventListener('DOMContentLoaded', () => {
     $('#anio').textContent = new Date().getFullYear();
+    calcularProgresoCursos();
     iniciarNav();
     iniciarEventos();
     aplicarIdioma(idiomaInicial());
